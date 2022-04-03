@@ -13,7 +13,7 @@ class BestBooks extends React.Component {
 
   /* TODO: Make a GET request to your API to fetch books for the logged in user  */
   componentDidMount = async () => {
-    const url = `https://jj-city-api.herokuapp.com/movies?query=new%york`;
+    const url = `https://can-of-books-backend-erich.herokuapp.com/books`;
     const response = await axios.get(url);
     this.setState({ books: response.data });
   }
@@ -25,13 +25,13 @@ class BestBooks extends React.Component {
     return (
       <>
         <h2>Available Books</h2>
-        {this.state.books.length ? (
+        {this.state.books.length > 0 ? (
           this.props.books.map((value, idx) =>
             <Carousel key={idx}>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src={value.poster}
+                  src={value.url}
                   alt="First slide"
                 />
                 <Carousel.Caption>

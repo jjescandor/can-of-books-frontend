@@ -26,8 +26,8 @@ class BestBooks extends React.Component {
       <>
         <h2>Available Books</h2>
         {this.state.books.length > 0 ? (
-          this.props.books.map((value, idx) =>
-            <Carousel key={idx}>
+          this.state.books.map((value, idx) =>
+            <Carousel key={value._id}>
               <Carousel.Item>
                 <img
                   className="d-block w-100"

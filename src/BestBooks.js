@@ -14,7 +14,7 @@ class BestBooks extends React.Component {
   /* TODO: Make a GET request to your API to fetch books for the logged in user  */
   componentDidMount = async () => {
     try {
-      const url = `${process.env.REACT_APP_SERVER}/movies?query=new%york`;
+      const url = `https://jj-city-api.herokuapp.com/movies?query=new%york`;
       const response = await axios.get(url);
       this.setState({ books: response.data });
     } catch (e) {
@@ -33,19 +33,20 @@ class BestBooks extends React.Component {
         <h2>Available Books</h2>
         {this.state.books.length ? (
           this.props.books.map((value, idx) => {
-            <Carousel key={idx}>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={movie.poster}
-                  alt="First slide"
-                />
-                <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            </Carousel>
+            return (
+              <Carousel key={idx}>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={value.poster}
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>)
           })
         ) : (
           <h3>No Books Found :(</h3>

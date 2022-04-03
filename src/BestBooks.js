@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import axios from 'axios';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class BestBooks extends React.Component {
     try {
       const url = `${process.env.REACT_APP_SERVER}/movies?query=new%york`;
       const response = await axios.get(url);
-      this.setState({ books: movieResults.data });
+      this.setState({ books: response.data });
     } catch (e) {
       this.setState({
         error: e.message

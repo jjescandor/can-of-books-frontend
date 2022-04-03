@@ -14,7 +14,7 @@ class BestBooks extends React.Component {
   /* TODO: Make a GET request to your API to fetch books for the logged in user  */
   componentDidMount = async () => {
     try {
-      const url = `${process.env.REACT_APP_SERVER}/movies?query=new%york`;
+      const url = `https://jj-city-api.herokuapp.com/movies?query=new%york`;
       const response = await axios.get(url);
       this.setState({ books: response.data });
     } catch (e) {

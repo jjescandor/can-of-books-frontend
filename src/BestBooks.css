@@ -1,0 +1,37 @@
+.booksH2{
+    margin:auto;
+    text-align: center;
+    margin-top:5rem;
+}
+
+.booksImg{
+    width: 50%;
+    height:50%;
+    margin:auto;
+}
+
+.booksCarousel{
+    width:30%;
+    margin:5rem auto 10rem auto;
+} 
+
+
+.booksDesc{
+    background-color: slategray;
+    color:black;
+    opacity: 0.75;
+    margin:1rem;
+} 
+
+.booksItem img{
+    width: 50%;
+    height:50%;
+    margin:auto;
+}
+
+.booksItem h3{
+    background-color: slategray;
+    color:black;
+    opacity: 0.75;
+    margin:1rem;
+}

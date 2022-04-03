@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import './BestBooks.css';
 import axios from 'axios';
 
 class BestBooks extends React.Component {
@@ -13,7 +14,7 @@ class BestBooks extends React.Component {
 
   /* TODO: Make a GET request to your API to fetch books for the logged in user  */
   componentDidMount = async () => {
-    const url = `https://jj-city-api.herokuapp.com/movies?query=new%york`;
+    const url = `https://can-of-books-backend-erich.herokuapp.com/books`;
     const response = await axios.get(url);
     this.setState({ books: response.data });
   }
@@ -24,23 +25,24 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <h2>Available Books</h2>
-        {this.state.books.length ? (
-          this.props.books.map((value, idx) =>
-            <Carousel key={idx}>
-              <Carousel.Item>
+        <h2 className='booksH2'>Available Books</h2>
+        {this.state.books.length > 0 ? (
+          <Carousel className='booksCarousel'>
+            {this.state.books.map((value, idx) =>
+              <Carousel.Item key={idx} className='booksItem'>
                 <img
-                  className="d-block w-100"
-                  src={value.poster}
-                  alt="First slide"
+                  className="d-block w-100 booksImg"
+                  src={value.url}
+                  alt={value.title}
                 />
-                <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <Carousel.Caption className='Caption'>
+                  <h3>{value.title}</h3>
+                  <p className='booksDesc'>{value.description}</p>
                 </Carousel.Caption>
               </Carousel.Item>
-            </Carousel>
-          )) : (
+            )}
+          </Carousel>
+        ) : (
           <h3>No Books Found :(</h3>
         )}
       </>

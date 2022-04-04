@@ -25,7 +25,7 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <h2 className='booksH2'>Available Books</h2>
+        <h1 className='booksH1'>Available Books</h1>
         {this.state.books.length > 0 ? (
           <Carousel className='booksCarousel'>
             {this.state.books.map((value, idx) =>

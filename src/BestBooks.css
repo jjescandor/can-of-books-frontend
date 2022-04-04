@@ -1,18 +1,19 @@
-.booksH2{
-    margin:auto;
+.booksH1{
+    margin: 2rem auto;
     text-align: center;
-    margin-top:5rem;
 }
 
-.booksImg{
-    width: 50%;
-    height:50%;
+.booksCarousel .booksImg{
+    width: 70vw;
+    height:80vh;
     margin:auto;
 }
 
 .booksCarousel{
     width:30%;
-    margin:5rem auto 10rem auto;
+    height:40%;
+    margin:1rem auto 10rem auto;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 } 
 
 
@@ -25,7 +26,7 @@
 
 .booksItem img{
     width: 50%;
-    height:50%;
+    height:60%;
     margin:auto;
 }
 
@@ -34,4 +35,11 @@
     color:black;
     opacity: 0.75;
     margin:1rem;
+}
+
+@media (max-width:600px){
+    .booksCarousel{
+      width:80%;
+      height:80%;
+    }
 }

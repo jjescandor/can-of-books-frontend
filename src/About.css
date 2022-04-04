@@ -4,7 +4,6 @@
     justify-content: center;
     height: 100vh;
     border:none;
-    overflow: hidden;
 }
 
 .developersCard{
@@ -26,4 +25,19 @@
     overflow: hidden;
     height: 100vh;
     border-radius: 10px;
+}
+
+@media (max-width:600px){
+    .developersCard{
+      width:80%;
+      height:80%;
+    }
+    .developers{
+        width:100%;
+        height: 50%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
 }

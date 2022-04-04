@@ -1,7 +1,14 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import Carousel from 'react-elastic-carousel';
 import './BestBooks.css';
 import axios from 'axios';
+
+const breakpoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 }
+]
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -27,19 +34,20 @@ class BestBooks extends React.Component {
       <>
         <h1 className='booksH1'>Available Books</h1>
         {this.state.books.length > 0 ? (
-          <Carousel className='booksCarousel'>
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
             {this.state.books.map((value, idx) =>
-              <Carousel.Item key={idx} className='booksItem'>
-                <img
-                  className="d-block w-100 booksImg"
-                  src={value.url}
-                  alt={value.title}
-                />
-                <Carousel.Caption className='Caption'>
-                  <h3>{value.title}</h3>
-                  <p className='booksDesc'>{value.description}</p>
-                </Carousel.Caption>
-              </Carousel.Item>
+              // <Carousel.Item key={idx} className='booksItem'>
+              <img
+                key={idx}
+                className="d-block w-100 booksImg"
+                src={value.url}
+                alt={value.title}
+              />
+              //   {/* <Carousel.Caption className='Caption'>
+              //     <h3>{value.title}</h3>
+              //     <p className='booksDesc'>{value.description}</p>
+              //   </Carousel.Caption>
+              // </Carousel.Item> */}
             )}
           </Carousel>
         ) : (

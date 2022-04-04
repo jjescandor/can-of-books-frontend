@@ -4,16 +4,27 @@
 }
 
 .booksCarousel .booksImg{
-    width: 70vw;
-    height:80vh;
-    margin:auto;
+    width: 50vw;
+    height:50vh;
+    margin: 4rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    transition-duration: 350ms;
+}
+
+.booksCarousel .booksImg:hover{
+    transform: scale(1.05);
+    transition-duration: 350ms;
+}
+
+.booksCarousel .booksImg:active{
+    transform: scale(1);
+    transition-duration: 350ms;
 }
 
 .booksCarousel{
     width:30%;
     height:40%;
     margin:1rem auto 10rem auto;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 } 
 
 
@@ -24,11 +35,7 @@
     margin:1rem;
 } 
 
-.booksItem img{
-    width: 50%;
-    height:60%;
-    margin:auto;
-}
+
 
 .booksItem h3{
     background-color: slategray;

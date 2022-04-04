@@ -16,6 +16,8 @@
     width: 30%;
     height: 30%;
     border-radius: 10px;
+    align-items: cent;
+    align-content: center;
 }
 
 .developersBody{
@@ -23,18 +25,15 @@
     border:transparent;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     overflow: hidden;
-    height: 100vh;
     border-radius: 10px;
 }
 
 @media (max-width:600px){
     .developersCard{
       width:80%;
-      height:80%;
     }
     .developers{
         width:100%;
-        height: 50%;
         display:flex;
         flex-direction: column;
         align-items: center;

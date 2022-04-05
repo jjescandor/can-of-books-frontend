@@ -1,52 +1,64 @@
-.booksH1{
-    margin: 2rem auto;
-    text-align: center;
+.booksH1 {
+  margin: 2rem auto;
+  text-align: center;
 }
 
-.booksCarousel .booksImg{
-    width: 50vw;
-    height:50vh;
-    margin: 4rem;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    transition-duration: 350ms;
+.booksCarousel .booksImg {
+  width: 50vw;
+  height: 50vh;
+  margin: 4rem;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition-duration: 350ms;
 }
 
-.booksCarousel .booksImg:hover{
-    transform: scale(1.05);
-    transition-duration: 350ms;
+.booksCarousel .booksImg:hover {
+  transform: scale(1.05);
+  transition-duration: 350ms;
 }
 
-.booksCarousel .booksImg:active{
-    transform: scale(1);
-    transition-duration: 350ms;
+.booksCarousel .booksImg:active {
+  transform: scale(1);
+  transition-duration: 350ms;
 }
 
-.booksCarousel{
-    width:30%;
-    height:40%;
-    margin:1rem auto 10rem auto;
-} 
-
-
-.booksDesc{
-    background-color: slategray;
-    color:black;
-    opacity: 0.75;
-    margin:1rem;
-} 
-
-
-
-.booksItem h3{
-    background-color: slategray;
-    color:black;
-    opacity: 0.75;
-    margin:1rem;
+.booksCarousel {
+  width: 30%;
+  height: 40%;
+  margin: 1rem auto 10rem auto;
 }
 
-@media (max-width:600px){
-    .booksCarousel{
-      width:80%;
-      height:80%;
-    }
+.booksDesc {
+  background-color: slategray;
+  color: black;
+  opacity: 0.75;
+  margin: 1rem;
+}
+
+.booksItem h3 {
+  background-color: slategray;
+  color: black;
+  opacity: 0.75;
+  margin: 1rem;
+}
+
+.modalHeader {
+  background-color: slategray;
+  color: white;
+}
+
+.modalBody {
+  background-color: slategray;
+  color: white;
+}
+
+.modalFooter {
+  background-color: slategray;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .booksCarousel {
+    width: 80%;
+    height: 80%;
+  }
 }

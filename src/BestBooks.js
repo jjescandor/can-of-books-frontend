@@ -72,7 +72,6 @@ class BestBooks extends React.Component {
           show={this.state.show}
           onHide={this.onHide}
         />
-        <Button className='createButton'>Create a Book</Button>
 
       </>
     );

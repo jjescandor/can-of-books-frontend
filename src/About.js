@@ -10,8 +10,8 @@ class Profile extends Component {
     return (
       <div className='developers'>
         <Card className='developersCard'>
-          {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
           <Card.Body className='developersBody'>
+            <Card.Img className='img' src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1629765279/profile_wdlyay.svg' alt='' />
             <Card.Title>Erich Hartnauer</Card.Title>
             <Card.Text>
               I'm Erich Hartnauer. I am a boot Full-Stack developer who thoroughly enjoys making new and exciting practical applications. I am new to the tech field and looking to learn and grow with a company to sharpen my skills.
@@ -20,8 +20,8 @@ class Profile extends Component {
         </Card>
 
         <Card className='developersCard'>
-          {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
           <Card.Body className='developersBody'>
+            <Card.Img className='img' src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1629765279/profile_wdlyay.svg' alt='' />
             <Card.Title>JJ Escandor</Card.Title>
             <Card.Text>
               B Dope af

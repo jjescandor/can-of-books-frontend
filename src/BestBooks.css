@@ -63,3 +63,9 @@
     height: 80%;
   }
 }
+
+.createButton{
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
+}

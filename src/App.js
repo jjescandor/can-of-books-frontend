@@ -3,6 +3,7 @@ import About from './About';
 import Header from './Header';
 import Footer from './Footer';
 import BestBooks from './BestBooks';
+import CreateModal from './CreateModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -16,7 +17,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: null,
+      createShow: false
     }
+  }
+
+  showCreateModal = () => {
+    this.setState({ createShow: true });
+  }
+
+  hideCreateModal = () => {
+    this.setState({ createShow: false });
   }
 
   loginHandler = (user) => {
@@ -35,7 +45,7 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          <Header user={this.state.user} onLogout={this.logoutHandler} />
+          <Header user={this.state.user} onLogout={this.logoutHandler} showCreateModal={this.showCreateModal} />
           <Switch>
             <Route exact path="/">
               {/* PLACEHOLDER: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
@@ -47,6 +57,10 @@ class App extends React.Component {
               <About />
             </Route>
           </Switch>
+          <CreateModal
+            createShow={this.state.createShow}
+            hideCreateModal={this.hideCreateModal}
+          />
           <Footer />
         </Router>
       </>

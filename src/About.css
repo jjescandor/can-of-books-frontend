@@ -14,7 +14,6 @@
     margin: 10rem;
     text-align: center;
     width: 30%;
-    height: 30%;
     border-radius: 10px;
     align-items: cent;
     align-content: center;
@@ -31,12 +30,20 @@
 @media (max-width:600px){
     .developersCard{
       width:80%;
+      height:80vh;
     }
     .developers{
         width:100%;
+        /* height:100vh; */
         display:flex;
         flex-direction: column;
         align-items: center;
         align-content: center;
     }
+}
+
+.img{
+    width:40%;
+    height:40%;
+    margin:1rem auto;
 }

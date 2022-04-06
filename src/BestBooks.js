@@ -3,6 +3,7 @@ import Carousel from 'react-elastic-carousel';
 import './BestBooks.css';
 import axios from 'axios';
 import BookModal from './BookModal';
+import { Button } from 'react-bootstrap';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class BestBooks extends React.Component {
       error: '',
       show: false,
       selectedBooks: {},
+      createShow: false
     };
   }
 
@@ -42,7 +44,9 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <h1 className='booksH1'>Available Books</h1>
+        <>
+          <h1 className='booksH1'>Available Books</h1>
+        </>
         {this.state.books.length > 0 ? (
           <Carousel className='booksCarousel' breakPoints={breakpoints}>
             {this.state.books.map((value) => (
@@ -68,6 +72,8 @@ class BestBooks extends React.Component {
           show={this.state.show}
           onHide={this.onHide}
         />
+        <Button className='createButton'>Create a Book</Button>
+
       </>
     );
   }

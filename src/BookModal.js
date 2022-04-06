@@ -37,7 +37,7 @@ class BookModal extends Component {
             activeColor="#FFFF00"
           />
           <p>{this.props.bookData.description}</p>
-          <Button>Add to Cart</Button>
+          <Button>Delete</Button>
         </Modal.Body>
         <Modal.Footer className='modalFooter'>
           <Button onClick={this.props.onHide}>Close</Button>

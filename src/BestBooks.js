@@ -3,7 +3,6 @@ import Carousel from 'react-elastic-carousel';
 import './BestBooks.css';
 import axios from 'axios';
 import BookModal from './BookModal';
-import { Button } from 'react-bootstrap';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -72,7 +71,6 @@ class BestBooks extends React.Component {
           show={this.state.show}
           onHide={this.onHide}
         />
-        <Button className='createButton'>Create a Book</Button>
 
       </>
     );

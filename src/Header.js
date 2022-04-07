@@ -21,16 +21,6 @@ class Header extends React.Component {
       <Navbar bg="medium" className='nav' expand={false}>
         <Container fluid>
           <Navbar.Brand href="#"><IoIosBookmarks className='logo' /></Navbar.Brand>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Search books here"
-              className="me-4"
-              aria-label="Search"
-              size='md'
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
           <Navbar.Toggle aria-controls="offcanvasNavbar" className='toggle' />
           <Navbar.Offcanvas
             id="offcanvasNavbar"
@@ -38,9 +28,20 @@ class Header extends React.Component {
             placement="end"
           >
             <Offcanvas.Header className='drawer' closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel"><Button className="createButton" onClick={this.props.showCreateModal}>Create a Book</Button></Offcanvas.Title>
+              <Offcanvas.Title id="offcanvasNavbarLabel"></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className='drawer'>
+              <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Search books here"
+                  className="me-4"
+                  aria-label="Search"
+                  size='md'
+                />
+                <Button variant="outline-success" id='searchBtn'>Search</Button>
+              </Form>
+              <Button size='lg' variant="outline-success" id="createButton" onClick={this.props.showCreateModal}>Create a Book</Button>
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6>Home</h6></Link></Nav.Link>
                 <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6>About</h6></Link></Nav.Link>

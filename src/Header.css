@@ -1,7 +1,44 @@
+.drawer{
+  background-color: rgb(130, 145, 211);
+}
+
+.nav{
+  background-color: rgb(48, 49, 49);
+  position: sticky;
+  top:0;
+  z-index: 9;
+}
+
+.createButton:hover{
+  background-color: rgb(48, 49, 49);
+}
+
 a{
   color:#fff;
 }
 
 a:hover{
   color:darkgrey;
+}
+
+.logo{
+  font-size: 2rem;
+}
+
+.nav-link{
+  text-decoration: none;
+  color:white;
+}
+
+h6{
+  color:white;
+  margin: 1rem
+}
+
+.me-4{
+  width: 90%;
+}
+
+.toggle{
+  color:yellow
 }

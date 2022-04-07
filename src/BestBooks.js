@@ -3,6 +3,7 @@ import Carousel from 'react-elastic-carousel';
 import './BestBooks.css';
 import axios from 'axios';
 import BookModal from './BookModal';
+import CreateModal from './CreateModal';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class BestBooks extends React.Component {
       error: '',
       show: false,
       selectedBooks: {},
-      createShow: false
+      createShow: false,
     };
   }
 
@@ -20,16 +21,44 @@ class BestBooks extends React.Component {
     this.setState({ show: false });
   };
 
-  /* TODO: Make a GET request to your API to fetch books for the logged in user  */
-  componentDidMount = async () => {
+  createBook = async (newBook) => {
     try {
-      const url = `${process.env.REACT_APP_MONGO_SERVER}`;
+      const url = `${process.env.REACT_APP_MONGO_SERVER}/books`;
+      const response = await axios.post(url, newBook);
+      console.log(newBook);
+      console.log(response.data);
+      this.getBookData();
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  deleteBook = async (id) => {
+    try {
+      console.log(id);
+      const url = `${process.env.REACT_APP_MONGO_SERVER}/books/${id}`;
+      const response = await axios.delete(url);
+      console.log(response.data);
+      this.getBookData();
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  /* TODO: Make a GET request to your API to fetch books for the logged in user  */
+  getBookData = async () => {
+    try {
+      const url = `${process.env.REACT_APP_MONGO_SERVER}/books`;
       const response = await axios.get(url);
       this.setState({ books: response.data });
       console.log(response);
     } catch (e) {
       this.setState({ error: e.message });
     }
+  };
+
+  componentDidMount = () => {
+    this.getBookData();
   };
 
   render() {
@@ -70,8 +99,13 @@ class BestBooks extends React.Component {
           bookData={this.state.selectedBooks}
           show={this.state.show}
           onHide={this.onHide}
+          deleteBook={this.deleteBook}
         />
-
+        <CreateModal
+          createShow={this.props.createShow}
+          hideCreateModal={this.props.hideCreateModal}
+          createBook={this.createBook}
+        />
       </>
     );
   }

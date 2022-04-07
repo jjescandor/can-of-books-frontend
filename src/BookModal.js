@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import ReactStars from "react-rating-stars-component";
+import ReactStars from 'react-rating-stars-component';
 import './BestBooks.css';
 
 class BookModal extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
+    this.state = {};
   }
   changeRating = () => {
     //more to come
-  }
+  };
 
   render() {
     return (
@@ -34,10 +32,14 @@ class BookModal extends Component {
             count={5}
             onChange={this.changeRating}
             size={24}
-            activeColor="#FFFF00"
+            activeColor='#FFFF00'
           />
           <p>{this.props.bookData.description}</p>
-          <Button>Delete</Button>
+          <Button
+            onClick={() => this.props.deleteBook(this.props.bookData._id)}
+          >
+            Delete
+          </Button>
         </Modal.Body>
         <Modal.Footer className='modalFooter'>
           <Button onClick={this.props.onHide}>Close</Button>

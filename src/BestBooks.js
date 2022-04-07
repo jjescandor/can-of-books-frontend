@@ -23,7 +23,7 @@ class BestBooks extends React.Component {
 
   createBook = async (newBook) => {
     try {
-      const url = `${process.env.REACT_APP_MONGO_SERVER}/books`;
+      const url = `${process.env.REACT_APP_MONGO}/books`;
       const response = await axios.post(url, newBook);
       console.log(newBook);
       console.log(response.data);
@@ -36,7 +36,7 @@ class BestBooks extends React.Component {
   deleteBook = async (id) => {
     try {
       console.log(id);
-      const url = `https://can-of-books-backend-erich.herokuapp.com/books/${id}`;
+      const url = `${process.env.REACT_APP_MONGO}/books/${id}`;
       const response = await axios.delete(url);
       console.log(response.data);
       this.getBookData();
@@ -48,7 +48,7 @@ class BestBooks extends React.Component {
 
   getBookData = async () => {
     try {
-      const url = `https://can-of-books-backend-erich.herokuapp.com/books`;
+      const url = `${process.env.REACT_APP_MONGO}/books`;
       const response = await axios.get(url);
       this.setState({ books: response.data });
       console.log(response);

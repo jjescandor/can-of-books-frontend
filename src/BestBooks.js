@@ -45,7 +45,7 @@ class BestBooks extends React.Component {
     }
   };
 
-  /* TODO: Make a GET request to your API to fetch books for the logged in user  */
+
   getBookData = async () => {
     try {
       const url = `${process.env.REACT_APP_MONGO_SERVER}/books`;

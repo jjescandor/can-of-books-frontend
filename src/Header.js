@@ -4,6 +4,8 @@ import { FormControl, Nav } from 'react-bootstrap';
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import { Link } from "react-router-dom";
 import { IoIosBookmarks } from "react-icons/io";
+import { IoMdHome, IoIosPeople, IoIosPersonAdd } from "react-icons/io";
+import { IoLogInSharp } from "react-icons/io5";
 
 
 
@@ -43,10 +45,10 @@ class Header extends React.Component {
               </Form>
               <Button size='lg' variant="outline-success" id="createButton" onClick={this.props.showCreateModal}>Create a Book</Button>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6>Home</h6></Link></Nav.Link>
-                <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6>About</h6></Link></Nav.Link>
-                <Nav.Link href="#action1" ><Link to="/Signup" className="nav-link"><h6>Signup</h6></Link></Nav.Link>
-                <Nav.Link href="#action2" ><Link to="/Login" className="nav-link"><h6>Login</h6></Link></Nav.Link>
+                <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6><IoMdHome />  Home</h6></Link></Nav.Link>
+                <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6><IoIosPeople />  About</h6></Link></Nav.Link>
+                <Nav.Link href="#action1" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />  Signup</h6></Link></Nav.Link>
+                <Nav.Link href="#action2" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />  Login</h6></Link></Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

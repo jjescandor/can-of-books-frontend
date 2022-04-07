@@ -2,6 +2,16 @@
   background-color: rgb(130, 145, 211);
 }
 
+#searchBtn{
+  background-color: green;
+  color:white
+}
+
+#searchBtn:hover{
+  background-color: rgb(48, 49, 49);
+  color:white
+}
+
 .nav{
   background-color: rgb(48, 49, 49);
   position: sticky;
@@ -9,8 +19,15 @@
   z-index: 9;
 }
 
-.createButton:hover{
+#createButton{
   background-color: rgb(48, 49, 49);
+  margin-top: 20px;
+  width:100%;
+  margin: auto;
+}
+
+#createButton:hover{
+  background-color: green;
 }
 
 a{
@@ -41,4 +58,8 @@ h6{
 
 .toggle{
   color:yellow
+}
+
+.d-flex{
+  margin-bottom:1rem;
 }

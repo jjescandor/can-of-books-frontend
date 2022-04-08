@@ -1,0 +1,13 @@
+#submitBtn{
+    margin-top:10px;
+    width:20%;
+    border: 1px solid green;
+    background-color:rgb(48, 49, 49);
+    color:green;
+    height:3rem;
+}
+
+#submitBtn:hover{
+    background-color: green;
+    color:white;
+}

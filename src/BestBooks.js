@@ -14,6 +14,11 @@ class BestBooks extends React.Component {
       show: false,
       selectedBooks: {},
       createShow: false,
+      adventure: [],
+      fantasy: [],
+      fiction: [],
+      nonFiction: [],
+      youngAdult: [],
     };
   }
 
@@ -45,7 +50,6 @@ class BestBooks extends React.Component {
     }
   };
 
-
   getBookData = async () => {
     try {
       const url = `${process.env.REACT_APP_MONGO}/books`;
@@ -59,6 +63,18 @@ class BestBooks extends React.Component {
 
   componentDidMount = () => {
     this.getBookData();
+    this.filterGenre();
+  };
+
+  filterGenre = () => {
+    const adventure = this.state.books
+      ? this.state.books.filter((value) => value.genre === 'Adventure')
+      : [];
+    console.log(adventure);
+    // const fantasy;
+    // const fiction;
+    // const nonFiction;
+    // const youngAdult;
   };
 
   render() {

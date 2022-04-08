@@ -23,7 +23,7 @@ class Header extends React.Component {
       <Navbar bg="medium" className='nav' expand={false}>
         <Container fluid>
           <Navbar.Brand href="#"><IoIosBookmarks className='logo' /></Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" className='toggle' />
+          <Navbar.Toggle aria-controls="offcanvasNavbar" id='toggle' />
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"

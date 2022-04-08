@@ -1,5 +1,5 @@
 .booksH1 {
-  margin: 2rem auto;
+  margin:0 auto;
   text-align: center;
 }
 
@@ -25,7 +25,7 @@
 .booksCarousel {
   width: 30%;
   height: 40%;
-  margin: 1rem auto 10rem auto;
+  margin: 1rem auto 5rem auto;
 }
 
 .booksDesc {

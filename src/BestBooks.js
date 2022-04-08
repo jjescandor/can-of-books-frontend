@@ -9,6 +9,11 @@ class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      fiction: null,
+      adventure: null,
+      nonFiction: null,
+      fantasy: null,
+      youngAdult: null,
       books: [],
       error: '',
       show: false,
@@ -51,7 +56,7 @@ class BestBooks extends React.Component {
       const url = `${process.env.REACT_APP_MONGO}/books`;
       const response = await axios.get(url);
       this.setState({ books: response.data });
-      console.log(response);
+      this.filterGenre();
     } catch (e) {
       this.setState({ error: e.message });
     }
@@ -60,6 +65,19 @@ class BestBooks extends React.Component {
   componentDidMount = () => {
     this.getBookData();
   };
+
+  filterGenre = () => {
+    const fiction = this.state.books.filter(value => value.genre === "Fiction");
+    this.setState({ fiction: fiction });
+    const adventure = this.state.books.filter(value => value.genre === "Adventure");
+    this.setState({ adventure: adventure });
+    const nonFiction = this.state.books.filter(value => value.genre === "Non-Fiction");
+    this.setState({ nonFiction: nonFiction });
+    const fantasy = this.state.books.filter(value => value.genre === "Fantasy");
+    this.setState({ fantasy: fantasy });
+    const youngAdult = this.state.books.filter(value => value.genre === "Young Adult");
+    this.setState({ youngAdult: youngAdult });
+  }
 
   render() {
     /* TODO: render user's books in a Carousel */
@@ -72,12 +90,124 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <>
-          <h1 className='booksH1'>Available Books</h1>
-        </>
+        <h1 className='booksH1'>Available Books</h1>
         {this.state.books.length > 0 ? (
           <Carousel className='booksCarousel' breakPoints={breakpoints}>
             {this.state.books.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
+
+        <h1 className='booksH1'>Fiction</h1>
+        {this.state.fiction ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.fiction.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
+
+
+        <h1 className='booksH1'>Non-Fiction</h1>
+        {this.state.nonFiction ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.nonFiction.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
+
+
+        <h1 className='booksH1'>Adventure</h1>
+        {this.state.adventure ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.adventure.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
+
+
+        <h1 className='booksH1'>Fantasy</h1>
+        {this.state.fantasy ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.fantasy.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
+
+
+        <h1 className='booksH1'>Young Adult</h1>
+        {this.state.youngAdult ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.youngAdult.map((value) => (
               <img
                 key={value._id}
                 className='d-block w-100 booksImg'

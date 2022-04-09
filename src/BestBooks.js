@@ -4,6 +4,7 @@ import './BestBooks.css';
 import axios from 'axios';
 import BookModal from './BookModal';
 import CreateModal from './CreateModal';
+import UpdateFormModal from './UpdateFormModal.js'
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -17,14 +18,28 @@ class BestBooks extends React.Component {
       books: [],
       error: '',
       show: false,
+      showUpdate: false,
       selectedBooks: {},
+      selectedUpdateBooks: null,
       createShow: false,
     };
   }
 
   onHide = () => {
-    this.setState({ show: false });
+    this.setState({
+      show: false,
+      showUpdate: false
+    });
+    this.handleUpdateBook();
   };
+
+  showUpdateModal = (bookData) => {
+    this.setState({
+      showUpdate: true,
+      selectedUpdateBooks: bookData
+    });
+    console.log(this.state.selectedUpdateBooks);
+  }
 
   createBook = async (newBook) => {
     try {
@@ -61,6 +76,10 @@ class BestBooks extends React.Component {
       this.setState({ error: e.message });
     }
   };
+
+  handleUpdateBook = async (id) => {
+    console.log(id + "hello");
+  }
 
   componentDidMount = () => {
     this.getBookData();
@@ -102,7 +121,7 @@ class BestBooks extends React.Component {
                 onClick={() => {
                   this.setState({
                     show: true,
-                    selectedBooks: value,
+                    selectedBooks: value
                   });
                 }}
               />
@@ -124,7 +143,7 @@ class BestBooks extends React.Component {
                 onClick={() => {
                   this.setState({
                     show: true,
-                    selectedBooks: value,
+                    selectedBooks: value
                   });
                 }}
               />
@@ -147,7 +166,7 @@ class BestBooks extends React.Component {
                 onClick={() => {
                   this.setState({
                     show: true,
-                    selectedBooks: value,
+                    selectedBooks: value
                   });
                 }}
               />
@@ -170,7 +189,7 @@ class BestBooks extends React.Component {
                 onClick={() => {
                   this.setState({
                     show: true,
-                    selectedBooks: value,
+                    selectedBooks: value
                   });
                 }}
               />
@@ -193,7 +212,7 @@ class BestBooks extends React.Component {
                 onClick={() => {
                   this.setState({
                     show: true,
-                    selectedBooks: value,
+                    selectedBooks: value
                   });
                 }}
               />
@@ -217,6 +236,7 @@ class BestBooks extends React.Component {
                   this.setState({
                     show: true,
                     selectedBooks: value,
+                    selectedUpdateBooks: value
                   });
                 }}
               />
@@ -230,11 +250,18 @@ class BestBooks extends React.Component {
           show={this.state.show}
           onHide={this.onHide}
           deleteBook={this.deleteBook}
+          showUpdateModal={this.showUpdateModal}
         />
         <CreateModal
           createShow={this.props.createShow}
           hideCreateModal={this.props.hideCreateModal}
           createBook={this.createBook}
+        />
+        <UpdateFormModal
+          showUpdate={this.state.showUpdate}
+          onHide={this.onHide}
+          bookData={this.state.selectedUpdateBooks}
+          handleUpdateBook={this.handleUpdateBook}
         />
       </>
     );

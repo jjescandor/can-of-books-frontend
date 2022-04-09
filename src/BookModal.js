@@ -40,6 +40,11 @@ class BookModal extends Component {
           >
             Delete
           </Button>
+          <Button
+            onClick={() => this.props.showUpdateModal(this.props.bookData)}
+          >
+            Update
+          </Button>
         </Modal.Body>
         <Modal.Footer className='modalFooter'>
           <Button onClick={this.props.onHide}>Close</Button>

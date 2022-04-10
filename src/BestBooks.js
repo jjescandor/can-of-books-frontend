@@ -50,7 +50,6 @@ class BestBooks extends React.Component {
     }
   };
 
-
   getBookData = async () => {
     try {
       const url = `${process.env.REACT_APP_MONGO}/books`;
@@ -67,17 +66,27 @@ class BestBooks extends React.Component {
   };
 
   filterGenre = () => {
-    const fiction = this.state.books.filter(value => value.genre === "Fiction");
+    const fiction = this.state.books.filter(
+      (value) => value.genre === 'Fiction'
+    );
     this.setState({ fiction: fiction });
-    const adventure = this.state.books.filter(value => value.genre === "Adventure");
+    const adventure = this.state.books.filter(
+      (value) => value.genre === 'Adventure'
+    );
     this.setState({ adventure: adventure });
-    const nonFiction = this.state.books.filter(value => value.genre === "Non-Fiction");
+    const nonFiction = this.state.books.filter(
+      (value) => value.genre === 'Non-Fiction'
+    );
     this.setState({ nonFiction: nonFiction });
-    const fantasy = this.state.books.filter(value => value.genre === "Fantasy");
+    const fantasy = this.state.books.filter(
+      (value) => value.genre === 'Fantasy'
+    );
     this.setState({ fantasy: fantasy });
-    const youngAdult = this.state.books.filter(value => value.genre === "Young Adult");
+    const youngAdult = this.state.books.filter(
+      (value) => value.genre === 'Young Adult'
+    );
     this.setState({ youngAdult: youngAdult });
-  }
+  };
 
   render() {
     /* TODO: render user's books in a Carousel */
@@ -90,7 +99,7 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <h1 className='booksH1'>Available Books</h1>
+        <h1 className='booksH1'>All Genres</h1>
         {this.state.books.length > 0 ? (
           <Carousel className='booksCarousel' breakPoints={breakpoints}>
             {this.state.books.map((value) => (
@@ -134,7 +143,6 @@ class BestBooks extends React.Component {
           <h3>No Books Found :(</h3>
         )}
 
-
         <h1 className='booksH1'>Non-Fiction</h1>
         {this.state.nonFiction ? (
           <Carousel className='booksCarousel' breakPoints={breakpoints}>
@@ -156,7 +164,6 @@ class BestBooks extends React.Component {
         ) : (
           <h3>No Books Found :(</h3>
         )}
-
 
         <h1 className='booksH1'>Adventure</h1>
         {this.state.adventure ? (
@@ -180,7 +187,6 @@ class BestBooks extends React.Component {
           <h3>No Books Found :(</h3>
         )}
 
-
         <h1 className='booksH1'>Fantasy</h1>
         {this.state.fantasy ? (
           <Carousel className='booksCarousel' breakPoints={breakpoints}>
@@ -202,7 +208,6 @@ class BestBooks extends React.Component {
         ) : (
           <h3>No Books Found :(</h3>
         )}
-
 
         <h1 className='booksH1'>Young Adult</h1>
         {this.state.youngAdult ? (

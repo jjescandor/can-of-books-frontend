@@ -10,6 +10,7 @@ class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedUpdateBooks: null,
       fiction: null,
       adventure: null,
       nonFiction: null,
@@ -20,25 +21,27 @@ class BestBooks extends React.Component {
       show: false,
       showUpdate: false,
       selectedBooks: {},
-      selectedUpdateBooks: null,
       createShow: false,
     };
   }
 
   onHide = () => {
     this.setState({
-      show: false,
-      showUpdate: false
+      show: false
     });
     this.handleUpdateBook();
   };
 
-  showUpdateModal = (bookData) => {
+  updateOnHide = () => {
+    this.setState({ showUpdate: false });
+    this.setState({ selectedUpdateBooks: null })
+  }
+
+  showUpdateModal = (selectedUpdateBooks) => {
     this.setState({
       showUpdate: true,
-      selectedUpdateBooks: bookData
+      selectedUpdateBooks: selectedUpdateBooks
     });
-    console.log(this.state.selectedUpdateBooks);
   }
 
   createBook = async (newBook) => {
@@ -55,7 +58,6 @@ class BestBooks extends React.Component {
 
   deleteBook = async (id) => {
     try {
-      console.log(id);
       const url = `${process.env.REACT_APP_MONGO}/books/${id}`;
       const response = await axios.delete(url);
       console.log(response.data);
@@ -77,8 +79,17 @@ class BestBooks extends React.Component {
     }
   };
 
-  handleUpdateBook = async (id) => {
-    console.log(id + "hello");
+  handleUpdateBook = async (updatedBook) => {
+    try {
+      const url = `${process.env.REACT_APP_MONGO}/books/${updatedBook._id}`;
+      await axios.put(url, updatedBook);
+      const updatedBooks = this.state.books.map(currBook => {
+        return currBook._id === updatedBook._id ? updatedBook : currBook;
+      })
+      this.setState({ books: updatedBooks });
+    } catch (e) {
+      console.log(e.message);
+    }
   }
 
   componentDidMount = () => {
@@ -257,12 +268,14 @@ class BestBooks extends React.Component {
           hideCreateModal={this.props.hideCreateModal}
           createBook={this.createBook}
         />
-        <UpdateFormModal
-          showUpdate={this.state.showUpdate}
-          onHide={this.onHide}
-          bookData={this.state.selectedUpdateBooks}
-          handleUpdateBook={this.handleUpdateBook}
-        />
+        {this.state.selectedUpdateBooks &&
+          <UpdateFormModal
+            showUpdate={this.state.showUpdate}
+            updateOnHide={this.updateOnHide}
+            handleUpdateBook={this.handleUpdateBook}
+            selectedUpdateBooks={this.state.selectedUpdateBooks}
+          />
+        }
       </>
     );
   }

@@ -47,3 +47,8 @@
     height:40%;
     margin:1rem auto;
 }
+
+body {
+    background: rgb(131, 100, 161);
+    background: linear-gradient(117deg, rgba(131, 100, 161, 1) 0%, rgba(118, 166, 194, 1) 100%);
+  }

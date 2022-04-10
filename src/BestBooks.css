@@ -7,6 +7,10 @@ body {
   text-align: center;
 }
 
+h1{
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 12px 9px rgba(0, 0, 0, 0.22);
+}
+
 #margin{
   margin-top:4rem;
 }
@@ -21,9 +25,9 @@ body {
 }
 
 #carousel3dDiv{
-  margin:2rem auto 4rem auto;
-  background-color: transparent;
-  width:85%;
+  margin:0 auto 4rem auto;
+  background-color: black;
+  width:100%;
 }
 
 .booksCarousel .booksImg {
@@ -60,18 +64,7 @@ body {
   opacity: 0.75;
   margin: 1rem;
 }
-.modalHeader {
-  background-color: slategray;
-  color: white;
-}
-.modalBody {
-  background-color: slategray;
-  color: white;
-}
-.modalFooter {
-  background-color: slategray;
-  color: white;
-}
+
 @media (max-width: 600px) {
   .booksCarousel {
     width: 80%;

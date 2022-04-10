@@ -13,7 +13,7 @@
 }
 
 .nav{
-  background-color: rgb(48, 49, 49);
+  /* background-color: rgb(48, 49, 49); */
   position: sticky;
   top:0;
   z-index: 9;
@@ -40,7 +40,7 @@ a:hover{
 
 .logo{
   font-size: 2rem;
-  color: white;
+  color: black;
 }
 
 .nav-link{
@@ -58,8 +58,8 @@ h6{
 }
 
 #toggle{
-  background-color: white !important;
-
+  border:1px solid black;
+  color: white !important;
 }
 
 .d-flex{

@@ -123,11 +123,16 @@ class BestBooks extends React.Component {
       <img id="img3d" src="https://picsum.photos/1060/308/?random" alt="8" />,
       <img id="img3d" src="https://picsum.photos/1060/309/?random" alt="9" />,
       <img id="img3d" src="https://picsum.photos/1060/310/?random" alt="10" />,
-      <img id="img3d" src="https://picsum.photos/1060/311/?random" alt="6" />,
-      <img id="img3d" src="https://picsum.photos/1060/312/?random" alt="7" />,
-      <img id="img3d" src="https://picsum.photos/1060/313/?random" alt="8" />,
-      <img id="img3d" src="https://picsum.photos/1060/314/?random" alt="9" />,
-      <img id="img3d" src="https://picsum.photos/1060/315/?random" alt="10" />
+      <img id="img3d" src="https://picsum.photos/1060/311/?random" alt="11" />,
+      <img id="img3d" src="https://picsum.photos/1060/312/?random" alt="12" />,
+      <img id="img3d" src="https://picsum.photos/1060/313/?random" alt="13" />,
+      <img id="img3d" src="https://picsum.photos/1060/314/?random" alt="14" />,
+      <img id="img3d" src="https://picsum.photos/1060/315/?random" alt="15" />,
+      <img id="img3d" src="https://picsum.photos/1060/316/?random" alt="16" />,
+      <img id="img3d" src="https://picsum.photos/1060/317/?random" alt="17" />,
+      <img id="img3d" src="https://picsum.photos/1060/318/?random" alt="18" />,
+      <img id="img3d" src="https://picsum.photos/1060/319/?random" alt="19" />,
+      <img id="img3d" src="https://picsum.photos/1060/320/?random" alt="20" />
     ];
 
     const callback = (index) => {
@@ -148,7 +153,7 @@ class BestBooks extends React.Component {
             id="carousel3d"
             slides={slides}
             autoplay={true}
-            interval={5000}
+            interval={4000}
             onSlideChange={callback}
             arrows={true}
           />

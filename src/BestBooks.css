@@ -1,10 +1,31 @@
 body {
   font-family: 'Anton', sans-serif !important;
+  color:rgb(58, 57, 57);
 }
 .booksH1 {
   margin: 0 auto;
   text-align: center;
 }
+
+#margin{
+  margin-top:4rem;
+}
+
+#carousel3d{
+  border-radius: 5%;
+}
+
+#img3d{
+  width: 1060px;
+  height:300px;
+}
+
+#carousel3dDiv{
+  margin:2rem auto 4rem auto;
+  background-color: transparent;
+  width:85%;
+}
+
 .booksCarousel .booksImg {
   width: 30vh;
   height: 40vh;
@@ -112,6 +133,9 @@ body {
   .booksCarousel {
     width: 80%;
     height: 80%;
+  }
+  #carousel3dDiv{
+    display: none;
   }
 }
 .createButton {

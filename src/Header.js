@@ -22,7 +22,7 @@ class Header extends React.Component {
     return (
       <Navbar bg="medium" className='nav' expand={false}>
         <Container fluid>
-          <Navbar.Brand href="#"><IoIosBookmarks className='logo' /></Navbar.Brand>
+          <Navbar.Brand href="#"><Link to="/" ><IoIosBookmarks className='logo' /></Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" id='toggle' />
           <Navbar.Offcanvas
             id="offcanvasNavbar"
@@ -47,8 +47,8 @@ class Header extends React.Component {
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6><IoMdHome />  Home</h6></Link></Nav.Link>
                 <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6><IoIosPeople />  About</h6></Link></Nav.Link>
-                <Nav.Link href="#action1" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />  Signup</h6></Link></Nav.Link>
-                <Nav.Link href="#action2" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />  Login</h6></Link></Nav.Link>
+                <Nav.Link href="#action3" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />  Signup</h6></Link></Nav.Link>
+                <Nav.Link href="#action4" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />  Login</h6></Link></Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

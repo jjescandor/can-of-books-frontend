@@ -44,7 +44,7 @@ a:hover{
 
 .logo{
   font-size: 2rem;
-  color: black;
+  color: white;
 }
 
 .nav-link{
@@ -62,8 +62,9 @@ h6{
 }
 
 #toggle{
-  border:1px solid black;
+  border:1px solid white;
   color: white !important;
+  background-color: white;
 }
 
 .d-flex{

@@ -29,10 +29,10 @@ class Header extends React.Component {
             aria-labelledby="offcanvasNavbarLabel"
             placement="end"
           >
-            <Offcanvas.Header className='drawer' closeButton>
+            <Offcanvas.Header id='drawerH' closeButton>
               <Offcanvas.Title id="offcanvasNavbarLabel"></Offcanvas.Title>
             </Offcanvas.Header>
-            <Offcanvas.Body className='drawer'>
+            <Offcanvas.Body className='drawerB'>
               <Form className="d-flex">
                 <FormControl
                   type="search"

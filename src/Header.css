@@ -1,5 +1,9 @@
-.drawer{
-  background-color: rgb(130, 145, 211);
+#drawerH{
+  background: linear-gradient(117deg, rgba(131,100,161,1) 0%, rgba(118,166,194,1) 100%); 
+}
+
+.drawerB{
+  background: linear-gradient(117deg, rgba(131,100,161,1) 0%, rgba(118,166,194,1) 100%); 
 }
 
 #searchBtn{
@@ -64,4 +68,8 @@ h6{
 
 .d-flex{
   margin-bottom:1rem;
+}
+
+.drawer{
+  background-color: black;
 }

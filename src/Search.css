@@ -45,6 +45,6 @@ h3 {
   }
 
   .col {
-    width: 22%;
+    width: 22% !important;
   }
 }

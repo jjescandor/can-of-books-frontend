@@ -128,6 +128,11 @@ h1{
   #carousel3dDiv{
     display: none;
   }
+
+  .booksCarousel .booksImg {
+    width: 90%;
+    height: 90%;
+  }
   .rec-pagination{
     display: none !important;
   }

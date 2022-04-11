@@ -64,10 +64,10 @@ class Header extends React.Component {
               </Form>
               <Button size='lg' variant="outline-success" id="createButton" onClick={this.handleCreate}>Create a Book</Button>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6><IoMdHome />   Home</h6></Link></Nav.Link>
-                <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6><IoIosPeople />   About</h6></Link></Nav.Link>
-                <Nav.Link href="#action3" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />   Signup</h6></Link></Nav.Link>
-                <Nav.Link href="#action4" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />   Login</h6></Link></Nav.Link>
+                <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6><IoMdHome />&nbsp;&nbsp; Home</h6></Link></Nav.Link>
+                <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6><IoIosPeople />&nbsp;&nbsp; About</h6></Link></Nav.Link>
+                <Nav.Link href="#action3" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />&nbsp;&nbsp; Signup</h6></Link></Nav.Link>
+                <Nav.Link href="#action4" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />&nbsp;&nbsp; Login</h6></Link></Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

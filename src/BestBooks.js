@@ -125,28 +125,50 @@ class BestBooks extends React.Component {
     const slides = [
       <img
         id='img3d'
-        src='https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9vayUyMGNvdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+        src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1649567681/travel2_rbdh24.avif'
         alt='1'
       />,
       <img
         id='img3d'
-        src='https://images.unsplash.com/photo-1589625855224-84765314d377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhhcnJ5JTIwcG90dGVyJTIwYm9va3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
-        alt='2'
-      />,
-      <img
-        id='img3d'
-        src='https://images.unsplash.com/photo-1569510968950-87d17be37521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGJvb2slMjBjb3ZlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+        src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1649567656/travel1_amce3i.jpg'
         alt='3'
       />,
       <img
         id='img3d'
-        src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTJ8fGJvb2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
+        src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1649699654/Screen_Shot_2022-04-11_at_1.53.11_PM_esoy5i.png'
         alt='4'
       />,
+      <img
+        id='img3d'
+        src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1649699658/Screen_Shot_2022-04-11_at_1.52.37_PM_gna3ym.png'
+        alt='5'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9vayUyMGNvdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+        alt='7'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1589625855224-84765314d377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhhcnJ5JTIwcG90dGVyJTIwYm9va3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+        alt='8'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1569510968950-87d17be37521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGJvb2slMjBjb3ZlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+        alt='9'
+      />,
+      <img
+        id='img3d'
+        src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1649699655/Screen_Shot_2022-04-11_at_1.52.18_PM_aoajsn.png'
+        alt='2'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9vayUyMGNvdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+        alt='6'
+      />
     ];
-    const callback = (index) => {
-      console.log('callback', index);
-    };
 
     const breakpoints = [
       { width: 1, itemsToShow: 1 },
@@ -163,7 +185,6 @@ class BestBooks extends React.Component {
             slides={slides}
             autoplay={true}
             interval={4000}
-            onSlideChange={callback}
             arrows={true}
           />
         </div>

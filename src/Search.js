@@ -6,12 +6,12 @@ import './Search.css';
 class Search extends Component {
   render() {
     return (
-      <div>
+      <div className='resDiv'>
         <h3 className='resH1'>Search Results</h3>
-        <Row xs={1} sm={2} md={3}>
+        <Row xs={1} sm={2} md={3} lg={3} xl={4} className='resRow'>
           {this.props.searchResultArr.map((value, idx) => {
             return (
-              <Col key={idx}>
+              <Col key={idx} >
                 <Card className='resCard'>
                   <Card.Img
                     className='resImg'

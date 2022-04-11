@@ -38,7 +38,18 @@ h3 {
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 2000px) {
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col {
+    width: 17% !important;
+  }
+}
+
+@media (max-width: 1700px) {
   .row {
     display: flex;
     justify-content: center;
@@ -46,5 +57,38 @@ h3 {
 
   .col {
     width: 22% !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col {
+    width: 23% !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col {
+    width: 25% !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col {
+    width: 27% !important;
   }
 }

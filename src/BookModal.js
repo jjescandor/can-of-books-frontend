@@ -5,13 +5,6 @@ import ReactStars from 'react-rating-stars-component';
 import './BestBooks.css';
 
 class BookModal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  changeRating = () => {
-    //more to come
-  };
 
   render() {
     return (

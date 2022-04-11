@@ -1,6 +1,7 @@
 .resDiv{
   margin: auto;
   width:80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,15 +9,13 @@
   justify-content: space-between;
 }
 
-  
 
 .resCard {
   margin:1rem 1rem;
   width: 80% !important;
   height: 80%;
   background-color: transparent !important;
-  border: transparent !important;
-  background-color: green;
+  border: none;
 }
 
 h3 {
@@ -26,10 +25,16 @@ h3 {
 
 .resImg {
   width: 100% !important;
-  height: 100%;
+  height: 100% !important;
   border-radius: 4%;
-  margin:1rem auto;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition: 350ms;
+  cursor:pointer;
+}
+
+.resImg:hover {
+  transform: scale(1.05);
+  transition: 350ms;
 }
 
 .resRow{
@@ -86,7 +91,6 @@ h3 {
   .resCard{
     display: block;
     margin: auto;
-    background-color: blue;
     width: 100%;
     height:100%;
   }

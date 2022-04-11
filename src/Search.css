@@ -15,7 +15,11 @@
   width: 80% !important;
   height: 80%;
   background-color: transparent !important;
-  border: none;
+  border: none !important;
+}
+
+.col{
+  margin:1rem;
 }
 
 h3 {
@@ -30,6 +34,7 @@ h3 {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   transition: 350ms;
   cursor:pointer;
+  margin:auto;
 }
 
 .resImg:hover {

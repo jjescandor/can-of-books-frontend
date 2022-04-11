@@ -44,7 +44,7 @@ class Header extends React.Component {
               <Offcanvas.Title id="offcanvasNavbarLabel"></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className='drawerB'>
-              <Form className="d-flex">
+              <Form className="d-flex" onSubmit={this.handleSubmit}>
                 <FormControl
                   type='search'
                   placeholder='Search books here'

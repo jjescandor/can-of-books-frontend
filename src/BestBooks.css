@@ -48,7 +48,7 @@ h1{
   transition-duration: 350ms;
 }
 .booksCarousel {
-  width: 80% !important;
+  width: 1200px;
   height: 40%;
   margin: 1rem auto 4rem auto;
 }

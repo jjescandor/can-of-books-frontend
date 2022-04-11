@@ -1,33 +1,33 @@
 body {
   font-family: 'Anton', sans-serif !important;
-  color: rgb(58, 57, 57);
+  color:rgb(58, 57, 57);
 }
 .booksH1 {
   margin: 0 auto;
   text-align: center;
 }
 
-h1 {
+h1{
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 12px 9px rgba(0, 0, 0, 0.22);
 }
 
-#margin {
-  margin-top: 4rem;
+#margin{
+  margin-top:4rem;
 }
 
-#carousel3d {
+#carousel3d{
   border-radius: 5%;
 }
 
-#img3d {
+#img3d{
   width: 1060px;
-  height: 300px;
+  height:300px;
 }
 
-#carousel3dDiv {
-  margin: -4rem auto 4rem auto;
+#carousel3dDiv{
+  margin:-4rem auto 4rem auto;
   background-color: black;
-  width: 100%;
+  width:100%;
 }
 
 .booksCarousel .booksImg {
@@ -37,7 +37,7 @@ h1 {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   transition-duration: 350ms;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 3%;
 }
 .booksCarousel .booksImg:hover {
   transform: scale(1.05);
@@ -122,24 +122,13 @@ h1 {
   background-color: slategray;
   color: white;
 }
-
-#carousel3dDiv img {
-  width: 700px;
-}
-
-#carousel3dDiv {
-}
 @media (max-width: 600px) {
   .booksCarousel {
     width: 80%;
     height: 80%;
   }
-  #carousel3dDiv {
+  #carousel3dDiv{
     display: none;
-  }
-
-  .rec-pagination {
-    display: none !important;
   }
 }
 .createButton {
@@ -148,6 +137,6 @@ h1 {
   position: center;
 }
 
-.bookModalBtn {
+.bookModalBtn{
   margin-right: 10px;
 }

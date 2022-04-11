@@ -33,25 +33,18 @@ class Header extends React.Component {
     return (
       <Navbar bg='medium' className='nav' expand={false}>
         <Container fluid>
-          <Navbar.Brand href='#'>
-            <Link to='/'>
-              <IoIosBookmarks
-                className='logo'
-                onClick={() => this.props.changeResult()}
-              />
-            </Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='offcanvasNavbar' id='toggle' />
+          <Navbar.Brand href="#"><Link to="/" ><IoIosBookmarks className='logo' /></Link></Navbar.Brand>
+          <Navbar.Toggle aria-controls="offcanvasNavbar" id='toggle' />
           <Navbar.Offcanvas
             id='offcanvasNavbar'
             aria-labelledby='offcanvasNavbarLabel'
             placement='end'
           >
             <Offcanvas.Header id='drawerH' closeButton>
-              <Offcanvas.Title id='offcanvasNavbarLabel'></Offcanvas.Title>
+              <Offcanvas.Title id="offcanvasNavbarLabel"></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className='drawerB'>
-              <Form className='d-flex' onSubmit={this.handleSubmit}>
+              <Form className="d-flex">
                 <FormControl
                   type='search'
                   placeholder='Search books here'
@@ -64,43 +57,12 @@ class Header extends React.Component {
                   Search
                 </Button>
               </Form>
-              <Button
-                size='lg'
-                variant='outline-success'
-                id='createButton'
-                onClick={this.props.showCreateModal}
-              >
-                Create a Book
-              </Button>
-              <Nav className='justify-content-end flex-grow-1 pe-3'>
-                <Nav.Link href='#action1'>
-                  <Link to='/' className='nav-link'>
-                    <h6 onClick={() => this.props.changeResult()}>
-                      <IoMdHome /> Home
-                    </h6>
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href='#action2'>
-                  <Link to='/About' className='nav-link'>
-                    <h6>
-                      <IoIosPeople /> About
-                    </h6>
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href='#action3'>
-                  <Link to='/Signup' className='nav-link'>
-                    <h6>
-                      <IoIosPersonAdd /> Signup
-                    </h6>
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href='#action4'>
-                  <Link to='/Login' className='nav-link'>
-                    <h6>
-                      <IoLogInSharp /> Login
-                    </h6>
-                  </Link>
-                </Nav.Link>
+              <Button size='lg' variant="outline-success" id="createButton" onClick={this.props.showCreateModal}>Create a Book</Button>
+              <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6><IoMdHome />  Home</h6></Link></Nav.Link>
+                <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6><IoIosPeople />  About</h6></Link></Nav.Link>
+                <Nav.Link href="#action3" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />  Signup</h6></Link></Nav.Link>
+                <Nav.Link href="#action4" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />  Login</h6></Link></Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

@@ -1,7 +1,22 @@
-.card {
-  width: 300px !important;
+.resDiv{
+  margin: auto;
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+  
+
+.resCard {
+  margin:1rem 1rem;
+  width: 80% !important;
+  height: 80%;
   background-color: transparent !important;
   border: transparent !important;
+  background-color: green;
 }
 
 h3 {
@@ -9,16 +24,21 @@ h3 {
   margin-bottom: 2rem;
 }
 
-.card img {
-  width: 300px !important;
-  height: 35vh;
-  margin-bottom: 2rem;
-  border-radius: 3%;
+.resImg {
+  width: 100% !important;
+  height: 100%;
+  border-radius: 4%;
+  margin:1rem auto;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-.col {
-  width: 15% !important;
+.resRow{
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin:2rem auto;
 }
 
 .row {
@@ -38,13 +58,39 @@ h3 {
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 600px) {
   .row {
     display: flex;
     justify-content: center;
   }
 
   .col {
-    width: 22% !important;
+    width: 100% !important;
+  }
+  .resDiv{
+    width:80%;
+    height:90%;
+    direction: flex;
+    flex-direction: column;
+  }
+  .resRow{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+  }
+  .resCard{
+    display: block;
+    margin: auto;
+    background-color: blue;
+    width: 100%;
+    height:100%;
+  }
+  .resImg{
+    margin: 1rem auto;
   }
 }

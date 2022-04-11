@@ -123,12 +123,14 @@ h1{
   color: white;
 }
 @media (max-width: 600px) {
-  .booksCarousel {
-    width: 80%;
-    height: 80%;
-  }
   #carousel3dDiv{
     display: none;
+  }
+  .rec-pagination{
+    display: none !important;
+  }
+  .booksCarousel{
+    width: 80% !important;
   }
 }
 .createButton {

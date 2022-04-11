@@ -69,7 +69,13 @@ a:hover {
 
 h6 {
   color: white;
-  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 2%;
+  width:105%;
+}
+
+h6:hover {
+  background-color: lightgray
 }
 
 h6:hover {

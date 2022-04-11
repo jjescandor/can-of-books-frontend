@@ -1,0 +1,153 @@
+body {
+  font-family: 'Anton', sans-serif !important;
+  color: rgb(58, 57, 57);
+}
+.booksH1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 12px 9px rgba(0, 0, 0, 0.22);
+}
+
+#margin {
+  margin-top: 4rem;
+}
+
+#carousel3d {
+  border-radius: 5%;
+}
+
+#img3d {
+  width: 1060px;
+  height: 300px;
+}
+
+#carousel3dDiv {
+  margin: -4rem auto 4rem auto;
+  background-color: black;
+  width: 100%;
+}
+
+.booksCarousel .booksImg {
+  width: 30vh;
+  height: 40vh;
+  margin: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition-duration: 350ms;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.booksCarousel .booksImg:hover {
+  transform: scale(1.05);
+  transition-duration: 350ms;
+}
+.booksCarousel .booksImg:active {
+  transform: scale(1);
+  transition-duration: 350ms;
+}
+.booksCarousel {
+  width: 80% !important;
+  height: 40%;
+  margin: 1rem auto 4rem auto;
+}
+.booksDesc {
+  background-color: slategray;
+  color: black;
+  opacity: 0.75;
+  margin: 1rem;
+}
+.booksItem h3 {
+  background-color: slategray;
+  color: black;
+  opacity: 0.75;
+  margin: 1rem;
+}
+
+@media (max-width: 600px) {
+  .booksCarousel {
+    width: 80%;
+    height: 80%;
+  }
+}
+.createButton {
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
+}
+.rec-dot {
+  background-color: transparent !important;
+}
+
+.booksH1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.booksCarousel .booksImg:hover {
+  transform: scale(1.05);
+  transition-duration: 350ms;
+}
+.booksCarousel .booksImg:active {
+  transform: scale(1);
+  transition-duration: 350ms;
+}
+.booksCarousel {
+  width: 80% !important;
+  height: 40%;
+  margin: 1rem auto 4rem auto;
+}
+.booksDesc {
+  background-color: slategray;
+  color: black;
+  opacity: 0.75;
+  margin: 1rem;
+}
+.booksItem h3 {
+  background-color: slategray;
+  color: black;
+  opacity: 0.75;
+  margin: 1rem;
+}
+.modalHeader {
+  background-color: slategray;
+  color: white;
+}
+.modalBody {
+  background-color: slategray;
+  color: white;
+}
+.modalFooter {
+  background-color: slategray;
+  color: white;
+}
+
+#carousel3dDiv img {
+  width: 700px;
+}
+
+#carousel3dDiv {
+}
+@media (max-width: 600px) {
+  .booksCarousel {
+    width: 80%;
+    height: 80%;
+  }
+  #carousel3dDiv {
+    display: none;
+  }
+
+  .rec-pagination {
+    display: none !important;
+  }
+}
+.createButton {
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
+}
+
+.bookModalBtn {
+  margin-right: 10px;
+}

@@ -37,3 +37,14 @@ h3 {
     text-align: center;
   }
 }
+
+@media (max-width: 1600px) {
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col {
+    width: 22%;
+  }
+}

@@ -4,11 +4,14 @@ import './BestBooks.css';
 import axios from 'axios';
 import BookModal from './BookModal';
 import CreateModal from './CreateModal';
+import UpdateFormModal from './UpdateFormModal.js';
+import { Carousel as Carousel3d } from '3d-react-carousal';
 
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedUpdateBooks: null,
       fiction: null,
       adventure: null,
       nonFiction: null,
@@ -17,13 +20,29 @@ class BestBooks extends React.Component {
       books: [],
       error: '',
       show: false,
+      showUpdate: false,
       selectedBooks: {},
       createShow: false,
     };
   }
 
   onHide = () => {
-    this.setState({ show: false });
+    this.setState({
+      show: false,
+    });
+    this.handleUpdateBook();
+  };
+
+  updateOnHide = () => {
+    this.setState({ showUpdate: false });
+    this.setState({ selectedUpdateBooks: null });
+  };
+
+  showUpdateModal = (selectedUpdateBooks) => {
+    this.setState({
+      showUpdate: true,
+      selectedUpdateBooks: selectedUpdateBooks,
+    });
   };
 
   createBook = async (newBook) => {
@@ -40,7 +59,6 @@ class BestBooks extends React.Component {
 
   deleteBook = async (id) => {
     try {
-      console.log(id);
       const url = `${process.env.REACT_APP_MONGO}/books/${id}`;
       const response = await axios.delete(url);
       console.log(response.data);
@@ -56,8 +74,22 @@ class BestBooks extends React.Component {
       const response = await axios.get(url);
       this.setState({ books: response.data });
       this.filterGenre();
+      this.props.getSearchResults(response.data);
     } catch (e) {
       this.setState({ error: e.message });
+    }
+  };
+
+  handleUpdateBook = async (updatedBook) => {
+    try {
+      const url = `${process.env.REACT_APP_MONGO}/books/${updatedBook._id}`;
+      await axios.put(url, updatedBook);
+      const updatedBooks = this.state.books.map((currBook) => {
+        return currBook._id === updatedBook._id ? updatedBook : currBook;
+      });
+      this.setState({ books: updatedBooks });
+    } catch (e) {
+      console.log(e.message);
     }
   };
 
@@ -90,6 +122,29 @@ class BestBooks extends React.Component {
 
   render() {
     /* TODO: render user's books in a Carousel */
+    const slides = [
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9vayUyMGNvdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+        alt='1'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1589625855224-84765314d377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhhcnJ5JTIwcG90dGVyJTIwYm9va3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+        alt='2'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1569510968950-87d17be37521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGJvb2slMjBjb3ZlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+        alt='3'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTJ8fGJvb2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
+        alt='4'
+      />,
+    ];
+
     const breakpoints = [
       { width: 1, itemsToShow: 1 },
       { width: 550, itemsToShow: 2 },
@@ -99,7 +154,16 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <h1 className='booksH1'>All Genres</h1>
+        <div id='carousel3dDiv'>
+          <Carousel3d
+            id='carousel3d'
+            slides={slides}
+            autoplay={true}
+            interval={4000}
+            arrows={false}
+          />
+        </div>
+        <h1 className='booksH1'>Available Books</h1>
         {this.state.books.length > 0 ? (
           <Carousel className='booksCarousel' breakPoints={breakpoints}>
             {this.state.books.map((value) => (
@@ -222,6 +286,7 @@ class BestBooks extends React.Component {
                   this.setState({
                     show: true,
                     selectedBooks: value,
+                    selectedUpdateBooks: value,
                   });
                 }}
               />
@@ -235,12 +300,21 @@ class BestBooks extends React.Component {
           show={this.state.show}
           onHide={this.onHide}
           deleteBook={this.deleteBook}
+          showUpdateModal={this.showUpdateModal}
         />
         <CreateModal
           createShow={this.props.createShow}
           hideCreateModal={this.props.hideCreateModal}
           createBook={this.createBook}
         />
+        {this.state.selectedUpdateBooks && (
+          <UpdateFormModal
+            showUpdate={this.state.showUpdate}
+            updateOnHide={this.updateOnHide}
+            handleUpdateBook={this.handleUpdateBook}
+            selectedUpdateBooks={this.state.selectedUpdateBooks}
+          />
+        )}
       </>
     );
   }

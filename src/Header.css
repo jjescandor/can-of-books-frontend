@@ -1,67 +1,92 @@
-.drawer{
-  background-color: rgb(130, 145, 211);
+#drawerH {
+  background: linear-gradient(
+    117deg,
+    rgba(131, 100, 161, 1) 0%,
+    rgba(118, 166, 194, 1) 100%
+  );
 }
 
-#searchBtn{
-  background-color: green;
-  color:white
+.drawerB {
+  background: linear-gradient(
+    117deg,
+    rgba(131, 100, 161, 1) 0%,
+    rgba(118, 166, 194, 1) 100%
+  );
 }
 
-#searchBtn:hover{
-  background-color: rgb(48, 49, 49);
-  color:white
+#searchBtn {
+  background-color: black;
+  color: white;
+  border-color: transparent;
 }
 
-.nav{
-  background-color: rgb(48, 49, 49);
+#searchBtn:hover {
+  background-color: white;
+  color: black;
+}
+
+.nav {
+  /* background-color: rgb(48, 49, 49); */
   position: sticky;
-  top:0;
+  top: 0;
   z-index: 9;
 }
 
-#createButton{
-  background-color: rgb(48, 49, 49);
+#createButton {
+  background-color: black;
   margin-top: 20px;
-  width:100%;
+  width: 100%;
   margin: auto;
+  color: white;
+  border-color: transparent;
 }
 
-#createButton:hover{
-  background-color: green;
+#createButton:hover {
+  background-color: white;
+  color: black;
 }
 
-a{
-  color:#fff;
+a {
+  color: #fff;
 }
 
-a:hover{
-  color:darkgrey;
+a:hover {
+  color: darkgrey;
 }
 
-.logo{
+.logo {
   font-size: 2rem;
   color: white;
 }
 
-.nav-link{
+.nav-link {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 
-h6{
-  color:rgb(48, 49, 49);
-  margin: 1rem
+h6 {
+  color: rgb(48, 49, 49);
+  margin: 1rem;
 }
 
-.me-4{
+h6:hover {
+  color: white;
+}
+
+.me-4 {
   width: 90%;
 }
 
-#toggle{
-  background-color: white !important;
-
+#toggle {
+  border: 1px solid white;
+  color: white !important;
+  background-color: white;
 }
 
-.d-flex{
-  margin-bottom:1rem;
+.d-flex {
+  margin-bottom: 1rem;
+}
+
+.drawer {
+  background-color: black;
 }

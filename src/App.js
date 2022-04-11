@@ -4,7 +4,14 @@ import Header from './Header';
 import Footer from './Footer';
 import BestBooks from './BestBooks';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import Search from './Search';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +19,9 @@ class App extends React.Component {
     this.state = {
       user: null,
       createShow: false,
+      booksArr: null,
+      searchResultArr: null,
+      isResult: false,
     };
   }
 
@@ -35,6 +45,26 @@ class App extends React.Component {
     });
   };
 
+  getSearchResults = (booksArr) => {
+    this.setState({ booksArr });
+  };
+
+  getSearchResultArr = (keyword) => {
+    const test = new RegExp(keyword, 'i');
+    const resultArr = this.state.booksArr.filter(
+      (book) =>
+        book.title.match(test) ||
+        book.author.match(test) ||
+        book.description.match(test)
+    );
+    this.setState({ searchResultArr: resultArr, isResult: true });
+    console.log(resultArr);
+  };
+
+  changeResult = () => {
+    this.setState({ isResult: false });
+  };
+
   render() {
     return (
       <>
@@ -43,7 +73,10 @@ class App extends React.Component {
             user={this.state.user}
             onLogout={this.logoutHandler}
             showCreateModal={this.showCreateModal}
+            getSearchResultArr={this.getSearchResultArr}
+            changeResult={this.changeResult}
           />
+          {this.state.isResult && <Redirect to='/Search' />}
           <Switch>
             <Route exact path='/'>
               {/* PLACEHOLDER: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
@@ -51,12 +84,17 @@ class App extends React.Component {
                 hideCreateModal={this.hideCreateModal}
                 showCreateModal={this.showCreateModal}
                 createShow={this.state.createShow}
+                getSearchResults={this.getSearchResults}
               />
             </Route>
             {/* PLACEHOLDER: add a route with a path of '/about' that renders the `About` component */}
             <Route exact path='/About'>
               {/* PLACEHOLDER: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
               <About />
+            </Route>
+            <Route exact path='/Search'>
+              {/* PLACEHOLDER: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
+              <Search searchResultArr={this.state.searchResultArr} />
             </Route>
           </Switch>
 

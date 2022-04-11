@@ -1,0 +1,39 @@
+.card {
+  width: 300px !important;
+  background-color: transparent;
+  border: transparent;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card img {
+  width: 300px !important;
+  height: 35vh;
+  margin-bottom: 2rem;
+  border-radius: 3%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.col {
+  width: 15%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}

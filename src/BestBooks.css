@@ -11,6 +11,16 @@ h1{
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 12px 9px rgba(0, 0, 0, 0.22);
 }
 
+
+
+.slider-right div{
+  border:none !important;
+} 
+
+.slider-left div{
+  border:none !important;
+}
+
 #margin{
   margin-top:4rem;
 }

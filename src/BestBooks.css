@@ -11,6 +11,16 @@ h1{
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 12px 9px rgba(0, 0, 0, 0.22);
 }
 
+
+
+.slider-right div{
+  border:none !important;
+} 
+
+.slider-left div{
+  border:none !important;
+}
+
 #margin{
   margin-top:4rem;
 }
@@ -21,7 +31,7 @@ h1{
 
 #img3d{
   width: 1060px;
-  height:300px;
+  height:380px;
 }
 
 #carousel3dDiv{
@@ -31,8 +41,8 @@ h1{
 }
 
 .booksCarousel .booksImg {
-  width: 30vh;
-  height: 40vh;
+  width: 300px;
+  height: 400px;
   margin: 2rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   transition-duration: 350ms;
@@ -48,7 +58,7 @@ h1{
   transition-duration: 350ms;
 }
 .booksCarousel {
-  width: 80% !important;
+  width: 1200px;
   height: 40%;
   margin: 1rem auto 4rem auto;
 }
@@ -85,14 +95,6 @@ h1{
   text-align: center;
 }
 
-.booksCarousel .booksImg:hover {
-  transform: scale(1.05);
-  transition-duration: 350ms;
-}
-.booksCarousel .booksImg:active {
-  transform: scale(1);
-  transition-duration: 350ms;
-}
 .booksCarousel {
   width: 80% !important;
   height: 40%;
@@ -123,12 +125,19 @@ h1{
   color: white;
 }
 @media (max-width: 600px) {
-  .booksCarousel {
-    width: 80%;
-    height: 80%;
-  }
   #carousel3dDiv{
     display: none;
+  }
+
+  .booksCarousel .booksImg {
+    width: 90%;
+    height: 90%;
+  }
+  .rec-pagination{
+    display: none !important;
+  }
+  .booksCarousel{
+    width: 80% !important;
   }
 }
 .createButton {

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { IoIosBookmarks } from 'react-icons/io';
 import { IoMdHome, IoIosPeople, IoIosPersonAdd } from 'react-icons/io';
 import { IoLogInSharp } from 'react-icons/io5';
-
 import './Header.css';
 
 class Header extends React.Component {
@@ -15,6 +14,7 @@ class Header extends React.Component {
     this.state = {
       expanded: false,
       keyword: null,
+      isCreate: null
     };
   }
 
@@ -28,6 +28,11 @@ class Header extends React.Component {
     event.preventDefault();
     this.props.getSearchResultArr(this.state.keyword);
   };
+
+  handleCreate = () => {
+    this.setState({ c: true });
+    this.props.showCreateModal();
+  }
 
   render() {
     return (
@@ -44,7 +49,7 @@ class Header extends React.Component {
               <Offcanvas.Title id="offcanvasNavbarLabel"></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className='drawerB'>
-              <Form className="d-flex">
+              <Form className="d-flex" onSubmit={this.handleSubmit}>
                 <FormControl
                   type='search'
                   placeholder='Search books here'
@@ -57,12 +62,12 @@ class Header extends React.Component {
                   Search
                 </Button>
               </Form>
-              <Button size='lg' variant="outline-success" id="createButton" onClick={this.props.showCreateModal}>Create a Book</Button>
+              <Button size='lg' variant="outline-success" id="createButton" onClick={this.handleCreate}>Create a Book</Button>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6><IoMdHome />  Home</h6></Link></Nav.Link>
-                <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6><IoIosPeople />  About</h6></Link></Nav.Link>
-                <Nav.Link href="#action3" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />  Signup</h6></Link></Nav.Link>
-                <Nav.Link href="#action4" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />  Login</h6></Link></Nav.Link>
+                <Nav.Link href="#action1" ><Link to="/" className="nav-link"><h6><IoMdHome />&nbsp;&nbsp; Home</h6></Link></Nav.Link>
+                <Nav.Link href="#action2" ><Link to="/About" className="nav-link"><h6><IoIosPeople />&nbsp;&nbsp; About</h6></Link></Nav.Link>
+                <Nav.Link href="#action3" ><Link to="/Signup" className="nav-link"><h6><IoIosPersonAdd />&nbsp;&nbsp; Signup</h6></Link></Nav.Link>
+                <Nav.Link href="#action4" ><Link to="/Login" className="nav-link"><h6><IoLogInSharp />&nbsp;&nbsp; Login</h6></Link></Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

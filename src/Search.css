@@ -10,8 +10,8 @@
 }
 
 .resCard {
-  margin: 1rem 1rem;
-  width: 80% !important;
+  margin: 1rem auto;
+  width: 100% !important;
   height: 80%;
   background-color: transparent !important;
   border: none !important;
@@ -43,7 +43,7 @@ h3 {
 
 .resRow {
   height: 100%;
-  width: 100%;
+  width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -60,7 +60,6 @@ h3 {
   .row {
     display: flex;
     flex-direction: column;
-    margin-left: 1.5rem;
   }
 
   h3 {
@@ -109,17 +108,11 @@ h3 {
     display: flex;
     justify-content: center;
   }
-  .col {
-    width: 17% !important;
-  }
 }
 @media (max-width: 1700px) {
   .row {
     display: flex;
     justify-content: center;
-  }
-  .col {
-    width: 22% !important;
   }
 }
 @media (max-width: 1400px) {
@@ -127,25 +120,17 @@ h3 {
     display: flex;
     justify-content: center;
   }
-  .col {
-    width: 23% !important;
-  }
 }
 @media (max-width: 1300px) {
   .row {
     display: flex;
     justify-content: center;
   }
-  .col {
-    width: 25% !important;
-  }
+
 }
 @media (max-width: 1200px) {
   .row {
     display: flex;
     justify-content: center;
-  }
-  .col {
-    width: 27% !important;
   }
 }

@@ -28,22 +28,22 @@ class BestBooks extends React.Component {
 
   onHide = () => {
     this.setState({
-      show: false
+      show: false,
     });
     this.handleUpdateBook();
   };
 
   updateOnHide = () => {
     this.setState({ showUpdate: false });
-    this.setState({ selectedUpdateBooks: null })
-  }
+    this.setState({ selectedUpdateBooks: null });
+  };
 
   showUpdateModal = (selectedUpdateBooks) => {
     this.setState({
       showUpdate: true,
-      selectedUpdateBooks: selectedUpdateBooks
+      selectedUpdateBooks: selectedUpdateBooks,
     });
-  }
+  };
 
   createBook = async (newBook) => {
     try {
@@ -84,14 +84,14 @@ class BestBooks extends React.Component {
     try {
       const url = `${process.env.REACT_APP_MONGO}/books/${updatedBook._id}`;
       await axios.put(url, updatedBook);
-      const updatedBooks = this.state.books.map(currBook => {
+      const updatedBooks = this.state.books.map((currBook) => {
         return currBook._id === updatedBook._id ? updatedBook : currBook;
-      })
+      });
       this.setState({ books: updatedBooks });
     } catch (e) {
       console.log(e.message);
     }
-  }
+  };
 
   componentDidMount = () => {
     this.getBookData();
@@ -123,30 +123,29 @@ class BestBooks extends React.Component {
   render() {
     /* TODO: render user's books in a Carousel */
     const slides = [
-      <img id="img3d" src="https://picsum.photos/1060/301/?random" alt="1" />,
-      <img id="img3d" src="https://picsum.photos/1060/302/?random" alt="2" />,
-      <img id="img3d" src="https://picsum.photos/1060/303/?random" alt="3" />,
-      <img id="img3d" src="https://picsum.photos/1060/304/?random" alt="4" />,
-      <img id="img3d" src="https://picsum.photos/1060/305/?random" alt="5" />,
-      <img id="img3d" src="https://picsum.photos/1060/306/?random" alt="6" />,
-      <img id="img3d" src="https://picsum.photos/1060/307/?random" alt="7" />,
-      <img id="img3d" src="https://picsum.photos/1060/308/?random" alt="8" />,
-      <img id="img3d" src="https://picsum.photos/1060/309/?random" alt="9" />,
-      <img id="img3d" src="https://picsum.photos/1060/310/?random" alt="10" />,
-      <img id="img3d" src="https://picsum.photos/1060/311/?random" alt="11" />,
-      <img id="img3d" src="https://picsum.photos/1060/312/?random" alt="12" />,
-      <img id="img3d" src="https://picsum.photos/1060/313/?random" alt="13" />,
-      <img id="img3d" src="https://picsum.photos/1060/314/?random" alt="14" />,
-      <img id="img3d" src="https://picsum.photos/1060/315/?random" alt="15" />,
-      <img id="img3d" src="https://picsum.photos/1060/316/?random" alt="16" />,
-      <img id="img3d" src="https://picsum.photos/1060/317/?random" alt="17" />,
-      <img id="img3d" src="https://picsum.photos/1060/318/?random" alt="18" />,
-      <img id="img3d" src="https://picsum.photos/1060/319/?random" alt="19" />,
-      <img id="img3d" src="https://picsum.photos/1060/320/?random" alt="20" />
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9vayUyMGNvdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+        alt='1'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1589625855224-84765314d377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhhcnJ5JTIwcG90dGVyJTIwYm9va3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+        alt='2'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1569510968950-87d17be37521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGJvb2slMjBjb3ZlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+        alt='3'
+      />,
+      <img
+        id='img3d'
+        src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTJ8fGJvb2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
+        alt='4'
+      />,
     ];
-
     const callback = (index) => {
-      console.log("callback", index);
+      console.log('callback', index);
     };
 
     const breakpoints = [
@@ -158,9 +157,9 @@ class BestBooks extends React.Component {
 
     return (
       <>
-        <div id="carousel3dDiv">
+        <div id='carousel3dDiv'>
           <Carousel3d
-            id="carousel3d"
+            id='carousel3d'
             slides={slides}
             autoplay={true}
             interval={4000}
@@ -169,149 +168,137 @@ class BestBooks extends React.Component {
           />
         </div>
         <h1 className='booksH1'>Available Books</h1>
-        {
-          this.state.books.length > 0 ? (
-            <Carousel className='booksCarousel' breakPoints={breakpoints}>
-              {this.state.books.map((value) => (
-                <img
-                  key={value._id}
-                  className='d-block w-100 booksImg'
-                  src={value.url}
-                  alt={value.title}
-                  onClick={() => {
-                    this.setState({
-                      show: true,
-                      selectedBooks: value
-                    });
-                  }}
-                />
-              ))}
-            </Carousel>
-          ) : (
-            <h3>No Books Found :(</h3>
-          )
-        }
+        {this.state.books.length > 0 ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.books.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
 
         <h1 className='booksH1'>Fiction</h1>
-        {
-          this.state.fiction ? (
-            <Carousel className='booksCarousel' breakPoints={breakpoints}>
-              {this.state.fiction.map((value) => (
-                <img
-                  key={value._id}
-                  className='d-block w-100 booksImg'
-                  src={value.url}
-                  alt={value.title}
-                  onClick={() => {
-                    this.setState({
-                      show: true,
-                      selectedBooks: value
-                    });
-                  }}
-                />
-              ))}
-            </Carousel>
-          ) : (
-            <h3>No Books Found :(</h3>
-          )
-        }
+        {this.state.fiction ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.fiction.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
 
         <h1 className='booksH1'>Non-Fiction</h1>
-        {
-          this.state.nonFiction ? (
-            <Carousel className='booksCarousel' breakPoints={breakpoints}>
-              {this.state.nonFiction.map((value) => (
-                <img
-                  key={value._id}
-                  className='d-block w-100 booksImg'
-                  src={value.url}
-                  alt={value.title}
-                  onClick={() => {
-                    this.setState({
-                      show: true,
-                      selectedBooks: value
-                    });
-                  }}
-                />
-              ))}
-            </Carousel>
-          ) : (
-            <h3>No Books Found :(</h3>
-          )
-        }
+        {this.state.nonFiction ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.nonFiction.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
 
         <h1 className='booksH1'>Adventure</h1>
-        {
-          this.state.adventure ? (
-            <Carousel className='booksCarousel' breakPoints={breakpoints}>
-              {this.state.adventure.map((value) => (
-                <img
-                  key={value._id}
-                  className='d-block w-100 booksImg'
-                  src={value.url}
-                  alt={value.title}
-                  onClick={() => {
-                    this.setState({
-                      show: true,
-                      selectedBooks: value
-                    });
-                  }}
-                />
-              ))}
-            </Carousel>
-          ) : (
-            <h3>No Books Found :(</h3>
-          )
-        }
+        {this.state.adventure ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.adventure.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
 
         <h1 className='booksH1'>Fantasy</h1>
-        {
-          this.state.fantasy ? (
-            <Carousel className='booksCarousel' breakPoints={breakpoints}>
-              {this.state.fantasy.map((value) => (
-                <img
-                  key={value._id}
-                  className='d-block w-100 booksImg'
-                  src={value.url}
-                  alt={value.title}
-                  onClick={() => {
-                    this.setState({
-                      show: true,
-                      selectedBooks: value
-                    });
-                  }}
-                />
-              ))}
-            </Carousel>
-          ) : (
-            <h3>No Books Found :(</h3>
-          )
-        }
+        {this.state.fantasy ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.fantasy.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
 
         <h1 className='booksH1'>Young Adult</h1>
-        {
-          this.state.youngAdult ? (
-            <Carousel className='booksCarousel' breakPoints={breakpoints}>
-              {this.state.youngAdult.map((value) => (
-                <img
-                  key={value._id}
-                  className='d-block w-100 booksImg'
-                  src={value.url}
-                  alt={value.title}
-                  onClick={() => {
-                    this.setState({
-                      show: true,
-                      selectedBooks: value,
-                      selectedUpdateBooks: value
-                    });
-                  }}
-                />
-              ))}
-            </Carousel>
-          ) : (
-            <h3>No Books Found :(</h3>
-          )
-        }
+        {this.state.youngAdult ? (
+          <Carousel className='booksCarousel' breakPoints={breakpoints}>
+            {this.state.youngAdult.map((value) => (
+              <img
+                key={value._id}
+                className='d-block w-100 booksImg'
+                src={value.url}
+                alt={value.title}
+                onClick={() => {
+                  this.setState({
+                    show: true,
+                    selectedBooks: value,
+                    selectedUpdateBooks: value,
+                  });
+                }}
+              />
+            ))}
+          </Carousel>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
         <BookModal
           bookData={this.state.selectedBooks}
           show={this.state.show}
@@ -324,15 +311,14 @@ class BestBooks extends React.Component {
           hideCreateModal={this.props.hideCreateModal}
           createBook={this.createBook}
         />
-        {
-          this.state.selectedUpdateBooks &&
+        {this.state.selectedUpdateBooks && (
           <UpdateFormModal
             showUpdate={this.state.showUpdate}
             updateOnHide={this.updateOnHide}
             handleUpdateBook={this.handleUpdateBook}
             selectedUpdateBooks={this.state.selectedUpdateBooks}
           />
-        }
+        )}
       </>
     );
   }

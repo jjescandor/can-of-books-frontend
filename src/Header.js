@@ -30,7 +30,7 @@ class Header extends React.Component {
   };
 
   handleCreate = () => {
-    this.setState({ c: true });
+    this.setState({ isCreate: true });
     this.props.showCreateModal();
   }
 

@@ -97,6 +97,7 @@ class BestBooks extends React.Component {
 
   componentDidMount = () => {
     this.getBookData();
+    this.props.changeResult();
   };
 
   filterGenre = () => {

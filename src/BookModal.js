@@ -6,6 +6,7 @@ import './BestBooks.css';
 
 class BookModal extends Component {
 
+
   render() {
     return (
       <Modal
@@ -29,19 +30,19 @@ class BookModal extends Component {
           />
           <p>{this.props.bookData.description}</p>
           <Button
-            className="bookModalBtn"
+            id="bookModalBtn"
             onClick={() => this.props.deleteBook(this.props.bookData._id)}
           >
             Delete
           </Button>
           <Button
-            className="bookModalBtn"
+            id="bookModalBtn"
             onClick={() => this.props.showUpdateModal(this.props.bookData)}
           >
             Update
           </Button>
         </Modal.Body>
-        <Modal.Footer className='modalFooter'>
+        <Modal.Footer id='modalFooter'>
           <Button onClick={this.props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>

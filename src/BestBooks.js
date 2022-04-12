@@ -6,6 +6,7 @@ import BookModal from './BookModal';
 import CreateModal from './CreateModal';
 import UpdateFormModal from './UpdateFormModal.js';
 import { Carousel as Carousel3d } from '3d-react-carousal';
+import Alert from 'react-bootstrap/Alert'
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class BestBooks extends React.Component {
       showUpdate: false,
       selectedBooks: {},
       createShow: false,
+      showAlert: true
     };
   }
 
@@ -207,7 +209,20 @@ class BestBooks extends React.Component {
             ))}
           </Carousel>
         ) : (
-          <h3>No Books Found :(</h3>
+          <>
+            {this.state.showAlert &&
+              <Alert
+                id="alert"
+                variant="danger"
+                onClose={() => {
+                  this.setState({ showAlert: false });
+                }}
+                dismissible>
+                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+                <p>
+                </p>
+              </Alert>}
+          </>
         )}
 
         <h1 className='booksH1'>Fiction</h1>
@@ -229,7 +244,20 @@ class BestBooks extends React.Component {
             ))}
           </Carousel>
         ) : (
-          <h3>No Books Found :(</h3>
+          <>
+            {this.state.showAlert &&
+              <Alert
+                id="alert"
+                variant="danger"
+                onClose={() => {
+                  this.setState({ showAlert: false });
+                }}
+                dismissible>
+                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+                <p>
+                </p>
+              </Alert>}
+          </>
         )}
 
         <h1 className='booksH1'>Non-Fiction</h1>
@@ -251,7 +279,20 @@ class BestBooks extends React.Component {
             ))}
           </Carousel>
         ) : (
-          <h3>No Books Found :(</h3>
+          <>
+            {this.state.showAlert &&
+              <Alert
+                id="alert"
+                variant="danger"
+                onClose={() => {
+                  this.setState({ showAlert: false });
+                }}
+                dismissible>
+                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+                <p>
+                </p>
+              </Alert>}
+          </>
         )}
 
         <h1 className='booksH1'>Adventure</h1>
@@ -273,7 +314,20 @@ class BestBooks extends React.Component {
             ))}
           </Carousel>
         ) : (
-          <h3>No Books Found :(</h3>
+          <>
+            {this.state.showAlert &&
+              <Alert
+                id="alert"
+                variant="danger"
+                onClose={() => {
+                  this.setState({ showAlert: false });
+                }}
+                dismissible>
+                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+                <p>
+                </p>
+              </Alert>}
+          </>
         )}
 
         <h1 className='booksH1'>Fantasy</h1>
@@ -295,7 +349,20 @@ class BestBooks extends React.Component {
             ))}
           </Carousel>
         ) : (
-          <h3>No Books Found :(</h3>
+          <>
+            {this.state.showAlert &&
+              <Alert
+                id="alert"
+                variant="danger"
+                onClose={() => {
+                  this.setState({ showAlert: false });
+                }}
+                dismissible>
+                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+                <p>
+                </p>
+              </Alert>}
+          </>
         )}
 
         <h1 className='booksH1'>Young Adult</h1>
@@ -318,7 +385,20 @@ class BestBooks extends React.Component {
             ))}
           </Carousel>
         ) : (
-          <h3>No Books Found :(</h3>
+          <>
+            {this.state.showAlert &&
+              <Alert
+                id="alert"
+                variant="danger"
+                onClose={() => {
+                  this.setState({ showAlert: false });
+                }}
+                dismissible>
+                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+                <p>
+                </p>
+              </Alert>}
+          </>
         )}
         <BookModal
           bookData={this.state.selectedBooks}

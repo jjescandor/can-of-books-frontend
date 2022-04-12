@@ -28,7 +28,7 @@ class BookModal extends Component {
                     <p>{this.props.bookData.description}</p>
                 </Modal.Body>
                 <Modal.Footer className='modalFooter'>
-                    <Button onClick={this.props.onHide}>Close</Button>
+                    <Button id="bookModalBtn" onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
         );

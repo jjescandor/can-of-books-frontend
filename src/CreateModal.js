@@ -82,7 +82,8 @@ class CreateModal extends Component {
                 type='text'
               ></Form.Control>
             </Form.Group>
-            <Button type='submit' id='submitBtn'>Submit</Button>
+            <Button
+              type='submit' id='submitBtn'>Submit</Button>
           </Form>
         </Modal.Body>
         <Modal.Footer className='modalFooter'>

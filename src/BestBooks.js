@@ -6,7 +6,7 @@ import BookModal from './BookModal';
 import CreateModal from './CreateModal';
 import UpdateFormModal from './UpdateFormModal.js';
 import { Carousel as Carousel3d } from '3d-react-carousal';
-import Alert from 'react-bootstrap/Alert'
+import Alert from 'react-bootstrap/Alert';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class BestBooks extends React.Component {
       showUpdate: false,
       selectedBooks: {},
       createShow: false,
-      showAlert: true
+      showAlert: true,
     };
   }
 
@@ -169,7 +169,7 @@ class BestBooks extends React.Component {
         id='img3d'
         src='https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9vayUyMGNvdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
         alt='6'
-      />
+      />,
     ];
 
     const breakpoints = [
@@ -210,18 +210,19 @@ class BestBooks extends React.Component {
           </Carousel>
         ) : (
           <>
-            {this.state.showAlert &&
+            {this.state.showAlert && (
               <Alert
-                id="alert"
-                variant="danger"
+                id='alert'
+                variant='danger'
                 onClose={() => {
                   this.setState({ showAlert: false });
                 }}
-                dismissible>
+                dismissible
+              >
                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p>
-                </p>
-              </Alert>}
+                <p></p>
+              </Alert>
+            )}
           </>
         )}
 
@@ -245,18 +246,19 @@ class BestBooks extends React.Component {
           </Carousel>
         ) : (
           <>
-            {this.state.showAlert &&
+            {this.state.showAlert && (
               <Alert
-                id="alert"
-                variant="danger"
+                id='alert'
+                variant='danger'
                 onClose={() => {
                   this.setState({ showAlert: false });
                 }}
-                dismissible>
+                dismissible
+              >
                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p>
-                </p>
-              </Alert>}
+                <p></p>
+              </Alert>
+            )}
           </>
         )}
 
@@ -280,18 +282,19 @@ class BestBooks extends React.Component {
           </Carousel>
         ) : (
           <>
-            {this.state.showAlert &&
+            {this.state.showAlert && (
               <Alert
-                id="alert"
-                variant="danger"
+                id='alert'
+                variant='danger'
                 onClose={() => {
                   this.setState({ showAlert: false });
                 }}
-                dismissible>
+                dismissible
+              >
                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p>
-                </p>
-              </Alert>}
+                <p></p>
+              </Alert>
+            )}
           </>
         )}
 
@@ -315,18 +318,19 @@ class BestBooks extends React.Component {
           </Carousel>
         ) : (
           <>
-            {this.state.showAlert &&
+            {this.state.showAlert && (
               <Alert
-                id="alert"
-                variant="danger"
+                id='alert'
+                variant='danger'
                 onClose={() => {
                   this.setState({ showAlert: false });
                 }}
-                dismissible>
+                dismissible
+              >
                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p>
-                </p>
-              </Alert>}
+                <p></p>
+              </Alert>
+            )}
           </>
         )}
 
@@ -350,18 +354,19 @@ class BestBooks extends React.Component {
           </Carousel>
         ) : (
           <>
-            {this.state.showAlert &&
+            {this.state.showAlert && (
               <Alert
-                id="alert"
-                variant="danger"
+                id='alert'
+                variant='danger'
                 onClose={() => {
                   this.setState({ showAlert: false });
                 }}
-                dismissible>
+                dismissible
+              >
                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p>
-                </p>
-              </Alert>}
+                <p></p>
+              </Alert>
+            )}
           </>
         )}
 
@@ -386,18 +391,19 @@ class BestBooks extends React.Component {
           </Carousel>
         ) : (
           <>
-            {this.state.showAlert &&
+            {this.state.showAlert && (
               <Alert
-                id="alert"
-                variant="danger"
+                id='alert'
+                variant='danger'
                 onClose={() => {
                   this.setState({ showAlert: false });
                 }}
-                dismissible>
+                dismissible
+              >
                 <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p>
-                </p>
-              </Alert>}
+                <p></p>
+              </Alert>
+            )}
           </>
         )}
         <BookModal
@@ -418,6 +424,7 @@ class BestBooks extends React.Component {
             updateOnHide={this.updateOnHide}
             handleUpdateBook={this.handleUpdateBook}
             selectedUpdateBooks={this.state.selectedUpdateBooks}
+            onHide={this.onHide}
           />
         )}
       </>

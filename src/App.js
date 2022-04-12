@@ -14,7 +14,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: null,
-      createShow: false
+      createShow: false,
+      isResult: null
     };
   }
 
@@ -78,6 +79,7 @@ class App extends React.Component {
                 showCreateModal={this.showCreateModal}
                 createShow={this.state.createShow}
                 getSearchResults={this.getSearchResults}
+                changeResult={this.changeResult}
               />
             </Route>
             {/* PLACEHOLDER: add a route with a path of '/about' that renders the `About` component */}

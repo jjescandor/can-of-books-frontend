@@ -5,7 +5,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import { IoIosBookmarks } from 'react-icons/io';
 import { IoMdHome, IoIosPeople } from 'react-icons/io';
-// import { IoPersonCircleSharp } from 'react-icons/io5';
+import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './Profile';
 import './Header.css';
 import LoginButton from './LoginButton';
@@ -42,7 +42,7 @@ class Header extends React.Component {
       <Navbar bg='medium' className='nav' expand={false}>
         <Container fluid>
           <Navbar.Brand href='#'>
-            <Link to='/Home'>
+            <Link to='/'>
               <IoIosBookmarks className='logo' />
             </Link>
           </Navbar.Brand>
@@ -56,55 +56,57 @@ class Header extends React.Component {
               <Offcanvas.Title id='offcanvasNavbarLabel'></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className='drawerB'>
-              <Form className='d-flex' onSubmit={this.handleSubmit}>
-                <FormControl
-                  type='search'
-                  placeholder='Search books here'
-                  className='me-4'
-                  aria-label='Search'
-                  size='md'
-                  onChange={this.handleChange}
-                />
-                <Button type='submit' variant='outline-success' id='searchBtn'>
-                  Search
-                </Button>
-              </Form>
-              <Button
-                size='lg'
-                variant='outline-success'
-                id='createButton'
-                onClick={this.handleCreate}
-              >
-                Create a Book
-              </Button>
-              <Nav className='justify-content-end flex-grow-1 pe-3'>
-                <Nav.Link href='#action1'>
-                  <Link to='/Home' className='nav-link'>
-                    <h6>
-                      <IoMdHome />
-                      &nbsp;&nbsp; Home
-                    </h6>
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href='#action2'>
-                  <Link to='/About' className='nav-link'>
-                    <h6>
-                      <IoIosPeople />
-                      &nbsp;&nbsp; About
-                    </h6>
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href='#action4'>
+              {!this.props.auth0.isAuthenticated ?
+                (<Nav.Link href='#action4'>
                   <LoginButton />
-                </Nav.Link>
-                <Nav.Link>
-                  <LogoutButton />
-                </Nav.Link>
-              </Nav>
+                </Nav.Link>)
+                :
+                (<>
+                  <Form className='d-flex' onSubmit={this.handleSubmit}>
+                    <FormControl
+                      type='search'
+                      placeholder='Search books here'
+                      className='me-4'
+                      aria-label='Search'
+                      size='md'
+                      onChange={this.handleChange}
+                    />
+                    <Button type='submit' variant='outline-success' id='searchBtn'>
+                      Search
+                    </Button>
+                  </Form>
+                  <Button
+                    size='lg'
+                    variant='outline-success'
+                    id='createButton'
+                    onClick={this.handleCreate}
+                  >
+                    Create a Book
+                  </Button>
+                  <Nav className='justify-content-end flex-grow-1 pe-3'>
+                    <Nav.Link href='#action1'>
+                      <Link to='/' className='nav-link'>
+                        <h6>
+                          <IoMdHome />
+                          &nbsp;&nbsp; Home
+                        </h6>
+                      </Link>
+                    </Nav.Link>
+                    <Nav.Link href='#action2'>
+                      <Link to='/About' className='nav-link'>
+                        <h6>
+                          <IoIosPeople />
+                          &nbsp;&nbsp; About
+                        </h6>
+                      </Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                      <LogoutButton />
+                    </Nav.Link>
+                  </Nav>
+                  <Profile className="profile" />
+                </>)}
             </Offcanvas.Body>
-            <div>
-              <Profile />
-            </div>
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
@@ -112,4 +114,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);

@@ -23,7 +23,7 @@ class Search extends Component {
   render() {
     return (
       <>
-        {!this.props.searchResultArr && <Redirect to='/Home' />}
+        {!this.props.searchResultArr && <Redirect to='/' />}
         <div className='resDiv'>
           <h3 className='resH1'>Search Results</h3>
           <Row xs={1} sm={2} md={3} lg={3} xl={4} className='resRow'>

@@ -104,7 +104,7 @@ h6:hover {
 }
 
 .profile{
-  color: white;
+  color: lightgray;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -117,4 +117,5 @@ h6:hover {
   height: 50%;
   margin:1rem;
   border-radius: 50%;
+  border:1px solid rgba(131,100,161,1) !important;
 }

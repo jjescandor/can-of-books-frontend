@@ -4,11 +4,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { IoLogInSharp } from 'react-icons/io5';
 
 const LoginButton = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  console.log("login", isAuthenticated);
 
   //   return <button onClick={() => loginWithRedirect()}>Log In</button>;
   //   return <Button onClick={() => loginWithRedirect()}>Log In </Button>;
-  return (
+  return !isAuthenticated && (
     <div>
       <h6 onClick={() => loginWithRedirect()}>
         <IoLogInSharp />

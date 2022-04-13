@@ -3,13 +3,8 @@ import React from 'react';
 import { IoLogOutSharp } from 'react-icons/io5';
 const LogoutButton = () => {
   const { logout, isAuthenticated } = useAuth0();
-  console.log("logout", isAuthenticated);
+  console.log('logout', isAuthenticated);
 
-  //   return (
-  //     <button onClick={() => logout({ returnTo: window.location.origin })}>
-  //       Log Out
-  //     </button>
-  //   );
   return (
     isAuthenticated && (
       <div>

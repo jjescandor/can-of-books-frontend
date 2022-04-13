@@ -3,10 +3,12 @@ import About from './About';
 import Header from './Header';
 import Footer from './Footer';
 import Search from './Search';
+import Welcome from './Welcome';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import BestBooks from './BestBooks';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { withAuth0 } from '@auth0/auth0-react';
 import './App.css';
 
 class App extends React.Component {
@@ -15,7 +17,7 @@ class App extends React.Component {
     this.state = {
       user: null,
       createShow: false,
-      isResult: null
+      isResult: null,
     };
   }
 
@@ -71,8 +73,14 @@ class App extends React.Component {
             changeResult={this.changeResult}
           />
           {this.state.isResult && <Redirect to='/Search' />}
+          {/* {this.props.auth0.isAuthenticated && <Redirect to='/Welcome' />}
+          {this.props.auth0.isAuthenticated && <Redirect to='/Home' />} */}
           <Switch>
-            <Route exact path='/'>
+            <Route exact path='/Welcome'>
+              <Welcome />
+            </Route>
+
+            <Route exact path='/Home'>
               {/* PLACEHOLDER: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
               <BestBooks
                 hideCreateModal={this.hideCreateModal}
@@ -100,4 +108,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);

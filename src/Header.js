@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { IoIosBookmarks } from 'react-icons/io';
 import { IoMdHome, IoIosPeople } from 'react-icons/io';
 // import { IoPersonCircleSharp } from 'react-icons/io5';
+import Profile from './Profile';
 import './Header.css';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
@@ -41,7 +42,7 @@ class Header extends React.Component {
       <Navbar bg='medium' className='nav' expand={false}>
         <Container fluid>
           <Navbar.Brand href='#'>
-            <Link to='/'>
+            <Link to='/Home'>
               <IoIosBookmarks className='logo' />
             </Link>
           </Navbar.Brand>
@@ -78,7 +79,7 @@ class Header extends React.Component {
               </Button>
               <Nav className='justify-content-end flex-grow-1 pe-3'>
                 <Nav.Link href='#action1'>
-                  <Link to='/' className='nav-link'>
+                  <Link to='/Home' className='nav-link'>
                     <h6>
                       <IoMdHome />
                       &nbsp;&nbsp; Home
@@ -93,31 +94,17 @@ class Header extends React.Component {
                     </h6>
                   </Link>
                 </Nav.Link>
-                {/* May not need since we now have login with auth0  */}
-                {/* <Nav.Link href='#action3'>
-                  <Link to='/Signup' className='nav-link'>
-                    <h6>
-                      <IoIosPersonAdd />
-                      &nbsp;&nbsp; Signup
-                    </h6>
-                  </Link>
-                </Nav.Link> */}
                 <Nav.Link href='#action4'>
                   <LoginButton />
                 </Nav.Link>
                 <Nav.Link>
                   <LogoutButton />
                 </Nav.Link>
-
-                {/* Future addtion */}
-                {/* <Nav.Link href='#action5'>
-                  <Link to='/Profile' className='nav-link'>
-                    <IoPersonCircleSharp />
-                    &nbsp;&nbsp; Profile
-                  </Link>
-                </Nav.Link> */}
               </Nav>
             </Offcanvas.Body>
+            <div>
+              <Profile />
+            </div>
           </Navbar.Offcanvas>
         </Container>
       </Navbar>

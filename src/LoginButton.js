@@ -7,14 +7,12 @@ const LoginButton = () => {
   console.log('login', isAuthenticated);
 
   return (
-    !isAuthenticated && (
-      <div>
-        <h6 onClick={() => loginWithRedirect()}>
-          <IoLogInSharp />
-          &nbsp;&nbsp; Login
-        </h6>
-      </div>
-    )
+    <div>
+      <h6 onClick={() => loginWithRedirect()}>
+        <IoLogInSharp />
+        &nbsp;&nbsp; Login
+      </h6>
+    </div>
   );
 };
 

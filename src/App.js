@@ -8,8 +8,8 @@ import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import BestBooks from './BestBooks';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { withAuth0 } from '@auth0/auth0-react';
 import './App.css';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class App extends React.Component {
   constructor(props) {
@@ -73,22 +73,19 @@ class App extends React.Component {
             changeResult={this.changeResult}
           />
           {this.state.isResult && <Redirect to='/Search' />}
-          {/* {this.props.auth0.isAuthenticated && <Redirect to='/Welcome' />}
-          {this.props.auth0.isAuthenticated && <Redirect to='/Home' />} */}
           <Switch>
-            <Route exact path='/Welcome'>
-              <Welcome />
-            </Route>
-
-            <Route exact path='/Home'>
+            <Route exact path='/'>
               {/* PLACEHOLDER: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
-              <BestBooks
-                hideCreateModal={this.hideCreateModal}
-                showCreateModal={this.showCreateModal}
-                createShow={this.state.createShow}
-                getSearchResults={this.getSearchResults}
-                changeResult={this.changeResult}
-              />
+              {!this.props.auth0.isAuthenticated ?
+                <Welcome />
+                :
+                <BestBooks
+                  hideCreateModal={this.hideCreateModal}
+                  showCreateModal={this.showCreateModal}
+                  createShow={this.state.createShow}
+                  getSearchResults={this.getSearchResults}
+                  changeResult={this.changeResult}
+                />}
             </Route>
             {/* PLACEHOLDER: add a route with a path of '/about' that renders the `About` component */}
             <Route exact path='/About'>

@@ -98,3 +98,23 @@ h6:hover {
 .drawer{
   background-color: black;
 }
+
+.welcomeDiv h1{
+  text-align: center;
+}
+
+.profile{
+  color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.profile img{
+  width:50%;
+  height: 50%;
+  margin:1rem;
+  border-radius: 50%;
+}

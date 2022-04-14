@@ -3,6 +3,13 @@ import Card from 'react-bootstrap/Card';
 import './About.css';
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  componentDidMount = () => {
+    this.props.changeResult();
+  };
 
   render() {
     /* TODO: render information about logged in user */

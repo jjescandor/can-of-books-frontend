@@ -95,7 +95,8 @@ class BestBooks extends React.Component {
     }
   };
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
+
     this.getBookData();
     this.props.changeResult();
   };
@@ -413,6 +414,7 @@ class BestBooks extends React.Component {
           onHide={this.onHide}
           deleteBook={this.deleteBook}
           showUpdateModal={this.showUpdateModal}
+          addToReadingList={this.props.addToReadingList}
         />
         <CreateModal
           createShow={this.props.createShow}

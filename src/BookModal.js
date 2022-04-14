@@ -28,21 +28,29 @@ class BookModal extends Component {
             size={24}
             activeColor='#FFFF00'
           />
+          <Button
+            id="readingModalBtn"
+            onClick={() => this.props.addToReadingList(this.props.bookData)}
+          >
+            Add to reading list
+          </Button>
           <p>{this.props.bookData.description}</p>
-          <Button
-            id="bookModalBtn"
-            onClick={() => this.props.deleteBook(this.props.bookData._id)}
-          >
-            Delete
-          </Button>
-          <Button
-            id="bookModalBtn"
-            onClick={() => this.props.showUpdateModal(this.props.bookData)}
-          >
-            Update
-          </Button>
         </Modal.Body>
-        <Modal.Footer className='modalFooter'>
+        <Modal.Footer id='modalFooter'>
+          <div>
+            <Button
+              id="bookModalBtn"
+              onClick={() => this.props.deleteBook(this.props.bookData._id)}
+            >
+              Delete
+            </Button>
+            <Button
+              id="bookModalBtn"
+              onClick={() => this.props.showUpdateModal(this.props.bookData)}
+            >
+              Update
+            </Button>
+          </div>
           <Button
             id="bookModalBtn"
             onClick={this.props.onHide}>Close</Button>

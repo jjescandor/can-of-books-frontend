@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { IoIosBookmarks } from 'react-icons/io';
 import { IoMdHome, IoIosPeople } from 'react-icons/io';
 import { withAuth0 } from '@auth0/auth0-react';
+import { IoIosBook } from "react-icons/io";
 import Profile from './Profile';
 import './Header.css';
 import LoginButton from './LoginButton';
@@ -41,7 +42,7 @@ class Header extends React.Component {
     return (
       <Navbar bg='medium' className='nav' expand={false}>
         <Container fluid>
-          <Navbar.Brand href='#'>
+          <Navbar.Brand>
             <Link to='/'>
               <IoIosBookmarks className='logo' />
             </Link>
@@ -57,7 +58,7 @@ class Header extends React.Component {
             </Offcanvas.Header>
             <Offcanvas.Body className='drawerB'>
               {!this.props.auth0.isAuthenticated ?
-                (<Nav.Link href='#action4'>
+                (<Nav.Link >
                   <LoginButton />
                 </Nav.Link>)
                 :
@@ -84,7 +85,7 @@ class Header extends React.Component {
                     Create a Book
                   </Button>
                   <Nav className='justify-content-end flex-grow-1 pe-3'>
-                    <Nav.Link href='#action1'>
+                    <Nav.Link >
                       <Link to='/' className='nav-link'>
                         <h6>
                           <IoMdHome />
@@ -92,11 +93,19 @@ class Header extends React.Component {
                         </h6>
                       </Link>
                     </Nav.Link>
-                    <Nav.Link href='#action2'>
+                    <Nav.Link >
                       <Link to='/About' className='nav-link'>
                         <h6>
                           <IoIosPeople />
                           &nbsp;&nbsp; About
+                        </h6>
+                      </Link>
+                    </Nav.Link>
+                    <Nav.Link >
+                      <Link to='/ReadingList' className='nav-link'>
+                        <h6>
+                          <IoIosBook />
+                          &nbsp;&nbsp; My Reading List
                         </h6>
                       </Link>
                     </Nav.Link>

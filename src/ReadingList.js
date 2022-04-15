@@ -65,7 +65,7 @@ class ReadingList extends React.Component {
 
     render() {
         return (
-            <>
+            <div id="readingListDiv">
                 <h1>My Reading List</h1>
                 <Accordion
                     id="readingListCont"
@@ -73,7 +73,6 @@ class ReadingList extends React.Component {
                     flush>
                     {this.state.readingList.map(book =>
                         <Accordion.Item
-
                             eventKey={book._id}>
                             <Accordion.Header id="readingListHdr">{book.title}</Accordion.Header>
                             <Accordion.Body id="readingListBody">
@@ -100,8 +99,7 @@ class ReadingList extends React.Component {
                         </Accordion.Item>
                     )}
                 </Accordion>
-            </>)
-
+            </div>)
     }
 }
 

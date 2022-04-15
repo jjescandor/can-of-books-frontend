@@ -1,10 +1,10 @@
 import React from 'react';
-import Carousel from 'react-elastic-carousel';
 import './BestBooks.css';
 import axios from 'axios';
 import BookModal from './BookModal';
 import CreateModal from './CreateModal';
 import UpdateFormModal from './UpdateFormModal.js';
+import BooksCarousel from './BooksCarousel.js'
 import { Carousel as Carousel3d } from '3d-react-carousal';
 import Alert from 'react-bootstrap/Alert';
 
@@ -46,6 +46,13 @@ class BestBooks extends React.Component {
       selectedUpdateBooks: selectedUpdateBooks,
     });
   };
+
+  selectBook = (book) => {
+    this.setState({
+      show: true,
+      selectedBooks: book,
+    });
+  }
 
   createBook = async (newBook) => {
     try {
@@ -174,13 +181,6 @@ class BestBooks extends React.Component {
       />,
     ];
 
-    const breakpoints = [
-      { width: 1, itemsToShow: 1 },
-      { width: 550, itemsToShow: 2 },
-      { width: 768, itemsToShow: 3 },
-      { width: 1200, itemsToShow: 4 },
-    ];
-
     return (
       <>
         <div id='carousel3dDiv'>
@@ -192,172 +192,56 @@ class BestBooks extends React.Component {
             arrows={true}
           />
         </div>
+        {this.state.books.length === 0 &&
+          this.state.showAlert && (
+            <Alert
+              id='alert'
+              variant='danger'
+              onClose={() => {
+                this.setState({ showAlert: false });
+              }}
+              dismissible
+            >
+              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+              <p></p>
+            </Alert>
+          )}
         <h1 className='booksH1'>Available Books</h1>
-        {this.state.books.length > 0 ? (
-          <Carousel className='booksCarousel' breakPoints={breakpoints}>
-            {this.state.books.map((value) => (
-              <img
-                key={value._id}
-                className='d-block w-100 booksImg'
-                src={value.url}
-                alt={value.title}
-                onClick={() => {
-                  this.setState({
-                    show: true,
-                    selectedBooks: value,
-                  });
-                }}
-              />
-            ))}
-          </Carousel>
-        ) : (
-          <>
-            {this.state.showAlert && (
-              <Alert
-                id='alert'
-                variant='danger'
-                onClose={() => {
-                  this.setState({ showAlert: false });
-                }}
-                dismissible
-              >
-                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p></p>
-              </Alert>
-            )}
-          </>
-        )}
+        <BooksCarousel
+          books={this.state.books}
+          selectBook={this.selectBook}
+        />
 
         <h1 className='booksH1'>Fiction</h1>
-        {this.state.fiction ? (
-          <Carousel className='booksCarousel' breakPoints={breakpoints}>
-            {this.state.fiction.map((value) => (
-              <img
-                key={value._id}
-                className='d-block w-100 booksImg'
-                src={value.url}
-                alt={value.title}
-                onClick={() => {
-                  this.setState({
-                    show: true,
-                    selectedBooks: value,
-                  });
-                }}
-              />
-            ))}
-          </Carousel>
-        ) : (
-          <>
-            {this.state.showAlert && (
-              <p></p>
-            )}
-          </>
-        )}
+        <BooksCarousel
+          books={this.state.fiction}
+          selectBook={this.selectBook}
+        />
 
         <h1 className='booksH1'>Non-Fiction</h1>
-        {this.state.nonFiction ? (
-          <Carousel className='booksCarousel' breakPoints={breakpoints}>
-            {this.state.nonFiction.map((value) => (
-              <img
-                key={value._id}
-                className='d-block w-100 booksImg'
-                src={value.url}
-                alt={value.title}
-                onClick={() => {
-                  this.setState({
-                    show: true,
-                    selectedBooks: value,
-                  });
-                }}
-              />
-            ))}
-          </Carousel>
-        ) : (
-          <>
-            {this.state.showAlert && (
-              <p></p>
-            )}
-          </>
-        )}
+        <BooksCarousel
+          books={this.state.nonFiction}
+          selectBook={this.selectBook}
+        />
 
         <h1 className='booksH1'>Adventure</h1>
-        {this.state.adventure ? (
-          <Carousel className='booksCarousel' breakPoints={breakpoints}>
-            {this.state.adventure.map((value) => (
-              <img
-                key={value._id}
-                className='d-block w-100 booksImg'
-                src={value.url}
-                alt={value.title}
-                onClick={() => {
-                  this.setState({
-                    show: true,
-                    selectedBooks: value,
-                  });
-                }}
-              />
-            ))}
-          </Carousel>
-        ) : (
-          <>
-            {this.state.showAlert && (
-              <p></p>
-            )}
-          </>
-        )}
+        <BooksCarousel
+          books={this.state.adventure}
+          selectBook={this.selectBook}
+        />
 
         <h1 className='booksH1'>Fantasy</h1>
-        {this.state.fantasy ? (
-          <Carousel className='booksCarousel' breakPoints={breakpoints}>
-            {this.state.fantasy.map((value) => (
-              <img
-                key={value._id}
-                className='d-block w-100 booksImg'
-                src={value.url}
-                alt={value.title}
-                onClick={() => {
-                  this.setState({
-                    show: true,
-                    selectedBooks: value,
-                  });
-                }}
-              />
-            ))}
-          </Carousel>
-        ) : (
-          <>
-            {this.state.showAlert && (
-              <p></p>
-            )}
-          </>
-        )}
+        <BooksCarousel
+          books={this.state.fantasy}
+          selectBook={this.selectBook}
+        />
 
         <h1 className='booksH1'>Young Adult</h1>
-        {this.state.youngAdult ? (
-          <Carousel className='booksCarousel' breakPoints={breakpoints}>
-            {this.state.youngAdult.map((value) => (
-              <img
-                key={value._id}
-                className='d-block w-100 booksImg'
-                src={value.url}
-                alt={value.title}
-                onClick={() => {
-                  this.setState({
-                    show: true,
-                    selectedBooks: value,
-                    selectedUpdateBooks: value,
-                  });
-                }}
-              />
-            ))}
-          </Carousel>
-        ) : (
-          <>
-            {this.state.showAlert && (
-              <p></p>
-            )}
-          </>
-        )}
+        <BooksCarousel
+          books={this.state.youngAdult}
+          selectBook={this.selectBook}
+        />
+
         <BookModal
           bookData={this.state.selectedBooks}
           show={this.state.show}

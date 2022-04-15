@@ -93,7 +93,7 @@ class ReadingList extends React.Component {
                                     <Button
                                         id="readingListBtn"
                                         onClick={() => this.handleDeleteBook(book)}>
-                                        Delete
+                                        Remove From My List
                                     </Button>
                                 </div>
                             </Accordion.Body>

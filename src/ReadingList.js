@@ -74,8 +74,10 @@ class ReadingList extends React.Component {
                     {this.state.readingList.map(book =>
                         <Accordion.Item
                             eventKey={book._id}>
-                            <Accordion.Header id="readingListHdr">{book.title}</Accordion.Header>
-                            <Accordion.Body id="readingListBody">
+                            <Accordion.Header
+                                id="readingListHdr">{book.title}</Accordion.Header>
+                            <Accordion.Body
+                                id="readingListBody">
                                 <img
                                     id="readingListImg"
                                     src={book.url}

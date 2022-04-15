@@ -8,15 +8,14 @@ h1{
 
 #readingListCont{
     width:900px;
-    height: 100%;
+
     margin:5rem auto 10rem auto;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     border-radius: 3%;
     border:none;
     color:rgb(65, 64, 64);
-    background-color: red;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .accordion-button{

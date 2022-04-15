@@ -249,17 +249,7 @@ class BestBooks extends React.Component {
         ) : (
           <>
             {this.state.showAlert && (
-              <Alert
-                id='alert'
-                variant='danger'
-                onClose={() => {
-                  this.setState({ showAlert: false });
-                }}
-                dismissible
-              >
-                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p></p>
-              </Alert>
+              <p></p>
             )}
           </>
         )}
@@ -285,17 +275,7 @@ class BestBooks extends React.Component {
         ) : (
           <>
             {this.state.showAlert && (
-              <Alert
-                id='alert'
-                variant='danger'
-                onClose={() => {
-                  this.setState({ showAlert: false });
-                }}
-                dismissible
-              >
-                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p></p>
-              </Alert>
+              <p></p>
             )}
           </>
         )}
@@ -321,17 +301,7 @@ class BestBooks extends React.Component {
         ) : (
           <>
             {this.state.showAlert && (
-              <Alert
-                id='alert'
-                variant='danger'
-                onClose={() => {
-                  this.setState({ showAlert: false });
-                }}
-                dismissible
-              >
-                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p></p>
-              </Alert>
+              <p></p>
             )}
           </>
         )}
@@ -357,17 +327,7 @@ class BestBooks extends React.Component {
         ) : (
           <>
             {this.state.showAlert && (
-              <Alert
-                id='alert'
-                variant='danger'
-                onClose={() => {
-                  this.setState({ showAlert: false });
-                }}
-                dismissible
-              >
-                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p></p>
-              </Alert>
+              <p></p>
             )}
           </>
         )}
@@ -394,17 +354,7 @@ class BestBooks extends React.Component {
         ) : (
           <>
             {this.state.showAlert && (
-              <Alert
-                id='alert'
-                variant='danger'
-                onClose={() => {
-                  this.setState({ showAlert: false });
-                }}
-                dismissible
-              >
-                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p></p>
-              </Alert>
+              <p></p>
             )}
           </>
         )}

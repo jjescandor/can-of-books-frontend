@@ -33,7 +33,7 @@ class Profile extends Component {
               <Card.Img className='img' src='https://res.cloudinary.com/dxg5jg10h/image/upload/v1629765279/profile_wdlyay.svg' alt='' />
               <Card.Title>JJ Escandor</Card.Title>
               <Card.Text>
-                I'm a Data Scientist with background in software engineering and defense consulting leveraging over a decade of technical and consulting experience. Passionate about using code to optimize efficiency while developing creative, customer-focused solutions. Veteran of the United States Navy, with active Secret clearance.
+                I'm a Data Scientist with background in software engineering and defense consulting leveraging over a decade of technical and consulting experience. Passionate about using code to optimize efficiency while developing creative, customer-focused solutions.
               </Card.Text>
             </Card.Body>
           </Card>

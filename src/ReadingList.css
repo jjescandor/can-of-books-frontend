@@ -8,7 +8,8 @@ h1{
 
 #readingListCont{
     width:900px;
-    margin:5rem auto;
+    height: 100%;
+    margin:5rem auto 10rem auto;
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -70,6 +71,9 @@ h1{
 
 
 @media (max-width: 600px) {
+    #readingListDiv{
+        height: 100%;
+    }
     #readingListCont{
       width: 90%;
     }

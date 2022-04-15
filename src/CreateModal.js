@@ -55,7 +55,6 @@ class CreateModal extends Component {
                 type='text'
               ></Form.Control>
             </Form.Group>
-
             <Form.Group controlId='img'>
               <Form.Label>Img url</Form.Label>
               <Form.Control

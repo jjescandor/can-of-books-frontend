@@ -22,7 +22,7 @@ class Search extends Component {
 
   render() {
     return (
-      <>
+      <div id="searchDiv">
         {!this.props.searchResultArr && <Redirect to='/' />}
         <div className='resDiv'>
           <h3 className='resH1'>Search Results</h3>
@@ -57,7 +57,7 @@ class Search extends Component {
             />
           )}
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -1,3 +1,7 @@
+#readingListDiv{
+    height: 91vh;
+}
+
 h1{
     text-align: center;
 }
@@ -11,6 +15,7 @@ h1{
     border-radius: 3%;
     border:none;
     color:rgb(65, 64, 64);
+    background-color: red;
 }
 
 .accordion-button{

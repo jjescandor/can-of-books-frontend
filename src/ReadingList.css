@@ -2,17 +2,90 @@ h1{
     text-align: center;
 }
 
-#readingListDiv{
-    width:600px;
-    height:90%;
-    margin:auto;
-    display: flex;
-    flex-direction: column;
+#readingListCont{
+    width:900px;
+    margin:5rem auto;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 3%;
+    border:none;
+    color:rgb(65, 64, 64);
 }
 
-#readingListDiv img{
-    width:50%;
+.accordion-button{
+    background-color:  lightgrey !important;
+    color:rgb(65, 64, 64);
+    border:none
 }
 
+#readingListHdr::after{
+    color:purple;
+    border:none
+}
+
+#readingListBody{
+    display: flex;
+    flex-direction: row;
+    background-color:  whitesmoke;
+    color:rgb(65, 64, 64);
+    border:none;
+}
+
+#readingListBody #readingListBtn{
+    background-color: transparent;
+    color:white;
+    border: none;
+    background-color:rgba(131,100,161,1);
+    transition-duration: 350ms;
+}
+
+#readingListBtn:hover{
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    transition-duration: 350ms;
+}
+
+#readingListBtn:active{
+    transform: scale(1);
+    box-shadow: none;
+}
+
+
+#readingListBody img{
+    margin-right: 5rem;
+    border-radius: 3%;
+}
+
+#readingListImg{
+    width:20%;
+    height: 25%;
+}
+
+
+
+@media (max-width: 600px) {
+    #readingListCont{
+      width: 90%;
+    }
+    #readingListBody{
+        display: flex;
+        flex-direction: column;
+        background-color:  whitesmoke;
+        color:rgb(65, 64, 64);
+        border:none;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    #readingListBody div{
+        margin:10px 0;
+    }
+    #readingListImg{
+        width:100%;
+        height: 100%;
+        margin: auto;
+    }
+    #readingListBtn{
+        width: 50%;
+    }
+}
